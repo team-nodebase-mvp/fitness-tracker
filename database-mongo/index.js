@@ -1,31 +1,22 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
 db.on('error', function() {
-  console.log('mongoose connection error');
+  console.log('Unable to connect to database');
 });
 
 db.once('open', function() {
-  console.log('mongoose connected successfully');
+  console.log('Database Connected');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var userSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+  userHistory: Array
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var User = mongoose.model('User', userSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
-
-module.exports.selectAll = selectAll;
+module.exports = User;
