@@ -10,6 +10,9 @@ const postUserInfo = (userObj) => {
 }
 
 // Update
+const updateUserInfo = (userId, data) => {
+    return User.findOneAndUpdate({ 'email':  userId }, {$push: { userHistory: data } });
+}
 
 // Delete
 const deleteUser = (userId) => {
@@ -19,5 +22,6 @@ const deleteUser = (userId) => {
 module.exports = {
     getUserInfo,
     postUserInfo,
+    updateUserInfo,
     deleteUser
 }
