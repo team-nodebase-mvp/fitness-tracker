@@ -26,7 +26,6 @@ class App extends React.Component {
     const { value } = e.target;
     this.setState({
       page: value,
-      email: ''
     })
   }
 
@@ -36,12 +35,14 @@ class App extends React.Component {
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
     //check database to authenticate username and password
+
     //if authenticated, change state for page to 'userprofile'
     this.setState({
       page: 'userprofile',
       email: email
     })
   }
+
 
   render () {
     switch(this.state.page){
