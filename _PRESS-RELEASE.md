@@ -19,26 +19,27 @@ Once the project moves into development, the press release can be used as a touc
 ## Product Description ##
   > App to track your fitness progress and personal bests in weight-lifting, running, walking, cycling, and swimming. 
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Demographic ##
+  > People who would like to track their fitness progress would be interested in this app.
 
-## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+## About This Product ##
+  > This app is a no-fluff fitness tracker that allows the user to log different exercise-specific metrics with weight-lifting, running, walking, cycling, and swimming. The user will then be able to keep a daily record of their progress with these exercises. 
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > We saw that there were too many fitness trackers with too much complication to them. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > We built a product that focuses on ease of use and simplicity.
+  Describe how your product elegantly solves the problem.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "If you want to focus on your workout and not on your phone, use this app."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Register an account. Begin logging your exercises. That's it!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "This app is so easy to use that it lets me focus on my workout instead of being glued to my phone!" - Robert Joseph III 
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Open the app and register now!
