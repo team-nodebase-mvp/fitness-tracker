@@ -48,8 +48,9 @@ class App extends React.Component {
     e.preventDefault();
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
+    const password_two = e.target.getAttribute('password_two');
     //check database to make sure email doesn't already exist
-
+    console.log(`passwor`, password + ' ' + password_two)
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
     this.setState({
       page: 'userprofile',
