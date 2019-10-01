@@ -29,10 +29,10 @@ class App extends React.Component {
   }
 
   loginHandler(e) {
+    //get email and password input from login page
     e.preventDefault();
-    /*
-    need to confirm inputs are ok
-    */
+    const email = e.target.getAttribute('email');
+    const password = e.target.getAttribute('password');
     console.log('email',e.target.getAttribute('email'))
     console.log('pw',e.target.getAttribute('password'))
   }
