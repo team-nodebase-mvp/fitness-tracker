@@ -33,7 +33,8 @@ class App extends React.Component {
     /*
     need to confirm inputs are ok
     */
-    console.log('loginClick',e.target.getAttribute('value'))
+    console.log('email',e.target.getAttribute('email'))
+    console.log('pw',e.target.getAttribute('password'))
   }
 
   render () {
