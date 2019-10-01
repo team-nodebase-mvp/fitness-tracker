@@ -3,8 +3,8 @@ import ListItem from './ListItem.jsx';
 
 const List = ( { exercises } ) => (
   <div>
-    <h4> List Component </h4>
-    There are { exercises.length } exercises.
+    <h4> Exercises </h4>
+    You've done { exercises.length } exercises in the last 30 days.
     { exercises.map((exercise, i)=> <ListItem exercise={exercise} key={i} />)}
   </div>
 )
