@@ -3,9 +3,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, './client/src'),
+  entry: path.resolve(__dirname, './react-client/src'),
   output: {
-    path: path.resolve(__dirname, './client/dist'),
+    path: path.resolve(__dirname, './react-client/dist'),
     filename: 'bundle.js',
   },
   mode: 'development',
