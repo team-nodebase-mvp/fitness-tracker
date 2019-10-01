@@ -5,6 +5,7 @@ import Homepage from './components/Homepage.jsx';
 import Login from './components/Login.jsx';
 import Registration from './components/Registration.jsx';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +14,11 @@ class App extends React.Component {
       page: 'homepage'
     }
     this.clickHandler = this.clickHandler.bind(this);
+    this.loginHandler = this.loginHandler.bind(this);
+  }
+
+  componentDidMount() {
+    
   }
 
   clickHandler(e) {
@@ -21,8 +27,10 @@ class App extends React.Component {
       page: value
     })
   }
-  componentDidMount() {
-    
+
+  loginHandler(e) {
+    e.preventDefault();
+    console.log('loginClick','loginHandling')
   }
 
   render () {
@@ -32,7 +40,7 @@ class App extends React.Component {
       case 'userprofile':
         return (<div><UserProfile /></div>);
       case 'login':
-        return (<div><Login /></div>);
+        return (<div><Login loginHandler={this.loginHandler}/></div>);
       case 'register':
           return (<div><Registration /></div>);
     }
