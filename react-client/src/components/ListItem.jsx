@@ -1,9 +1,21 @@
 import React from 'react';
 
-const ListItem = (props) => (
-  <div>
-    { props.exercise }
-  </div>
-)
+class ListItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+    <div>
+      { this.props.exercise } { this.props.exercise }
+    </div>
+    )
+  }
+}
 
 export default ListItem;
