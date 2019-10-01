@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import UserProfile from './components/UserProfle.jsx';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
