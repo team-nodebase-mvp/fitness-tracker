@@ -15,7 +15,6 @@ class UserProfile extends React.Component {
     return (
       <div>
         <div>
-          {/* Form */}
           <Form />
         </div>
         <div>

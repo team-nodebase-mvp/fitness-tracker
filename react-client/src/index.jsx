@@ -19,20 +19,20 @@ class App extends React.Component {
   }
 
   render () {
-    switch(this.state.page){
-      case 'homepage':
-        return (<div><Homepage /></div>);
-      case 'userprofile':
-        return (<div><UserProfile /></div>);
-      case 'login':
-        return (<div><Login /></div>);
-      case 'registration':
-          return (<div><Registration /></div>);
-    }
-    // return (
-    // <div>
-    //   <UserProfile />
-    // </div>)
+    // switch(this.state.page){
+    //   case 'homepage':
+    //     return (<div><Homepage /></div>);
+    //   case 'userprofile':
+    //     return (<div><UserProfile /></div>);
+    //   case 'login':
+    //     return (<div><Login /></div>);
+    //   case 'registration':
+    //       return (<div><Registration /></div>);
+    // }
+    return (
+    <div>
+      <UserProfile />
+    </div>)
   }
 }
 
