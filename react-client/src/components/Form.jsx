@@ -5,14 +5,128 @@ class Form extends React.Component {
     super(props);
 
     this.state = {
-
+      exerciseCategory: ''
     }
+
+    this.handleExerciseChange = this.handleExerciseChange.bind(this);
+  }
+
+  handleExerciseChange(event) {
+    this.setState({
+      exerciseCategory: event.target.value
+    }, () => console.log(this.state.exerciseCategory));
   }
 
   render() {
+    const exerciseCategory = this.state.exerciseCategory;
+    let metrics;
+    if (exerciseCategory === '') {
+      metrics = '';
+    } else if (exerciseCategory === 'weightLifting') {
+      metrics=
+      <form className="form">
+        <span>
+          <label>Sets: </label>
+          <input type="text" name="sets" className="metric" required />
+        </span>
+        <span>
+          <label>Reps: </label>
+          <input type="text" name="reps" className="metric" required />
+        </span>
+        <span>
+          <label>Weight: </label>
+          <input type="text" name="weight" className="metric" required />
+        </span>
+      </form>;
+    } else if (exerciseCategory === 'runningWalking') {
+      metrics=
+      <form className="form">
+        <span>
+          <label>Time: </label>
+          <input type="text" name="time" className="metric" />
+        </span>
+        <span>
+          <label>Distance: </label>
+          <input type="text" name="distance" className="metric" />
+        </span>
+        <span>
+          <label>Speed: </label>
+          <input type="text" name="speed" className="metric" />
+        </span>
+        <span>
+          <label>Incline: </label>
+          <input type="text" name="incline" className="metric" />
+        </span>
+      </form>;
+    } else if (exerciseCategory === 'cycling') {
+      metrics=
+      <form className="form">
+        <span>
+          <label>Time: </label>
+          <input type="text" name="time" className="metric" />
+        </span>
+        <span>
+          <label>Distance: </label>
+          <input type="text" name="distance" className="metric" />
+        </span>
+        <span>
+          <label>Speed: </label>
+          <input type="text" name="speed" className="metric" />
+        </span>
+        <span>
+          <label>Resistance: </label>
+          <input type="text" name="resistance" className="metric" />
+        </span>
+      </form>;
+    } else {
+      metrics=
+      <form className="form">
+        <span>
+          <label>Time: </label>
+          <input type="text" name="time" className="metric" />
+        </span>
+        <span>
+          <label>Laps: </label>
+          <input type="text" name="distance" className="metric" />
+        </span>
+        <span>
+          <label>Distance: </label>
+          <input type="text" name="speed" className="metric" />
+        </span>
+        <span>
+          <label>Speed: </label>
+          <input type="text" name="laps" className="metric" />
+        </span>
+      </form>;
+    }
+
     return (
       <div>
-        Form
+        <div className="dropdown">
+          <select className="exercise-select" onChange={this.handleExerciseChange}>
+            <option value=""  >--Please choose an exercise--</option>
+            <option value="weightLifting" >Weight-Lifting</option>
+            <option value="runningWalking" >Running/Walking</option>
+            <option value="cycling" >Cycling</option>
+            <option value="swimming" >Swimming</option>
+          </select>
+        </div>
+        <div>
+          <form className="form">
+            <div >
+              <label>Custom: </label>
+              <input type="text" name="custom" id="custom" required />
+            </div>
+          </form>
+        </div>
+        <div className="metrics">
+        {metrics}
+        </div>
+        <div>
+          <button className="add-button" type="button">
+            Add Exercise
+          </button>
+        </div>
       </div>
     )
   }
