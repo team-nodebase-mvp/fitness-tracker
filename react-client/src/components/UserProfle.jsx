@@ -1,12 +1,13 @@
 import React from 'react';
 import List from './List.jsx';
+import Form from './Form.jsx';
 
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      exercises: ['exercise1', 'exercise2', 'exercise3']
     };
 
   }
@@ -14,12 +15,11 @@ class UserProfile extends React.Component {
     return (
       <div>
         <div>
-          Form
-          {/* <Form /> */}
+          {/* Form */}
+          <Form />
         </div>
         <div>
-          List
-          {/* <List /> */}
+          <List exercises={this.state.exercises}/>
         </div>
       </div>
     )
