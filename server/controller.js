@@ -23,6 +23,8 @@ const updateController = (req, res) => {
     let { query } = req;
     let { body } = req;
     updateUserInfo(query, body)
+    .then((response) => res.status(202).send(response))
+    .catch((error) => res.status(402).send(error))
 }
 
 const deleteController = (req, res) => {
