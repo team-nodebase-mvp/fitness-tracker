@@ -1,23 +1,31 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/react-client/src');
-var DIST_DIR = path.join(__dirname, '/react-client/dist');
+// this file is run with npm run build
+// it uses babel to compile everything in client/src into bundle.js
+const path = require('path');
 
 module.exports = {
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: path.resolve(__dirname, './client/src'),
   output: {
+    path: path.resolve(__dirname, './client/dist'),
     filename: 'bundle.js',
-    path: DIST_DIR
   },
-  module : {
-    loaders : [
+  mode: 'development',
+  module: {
+    rules: [
       {
-        test : /\.jsx?/,
-        include : SRC_DIR,
-        loader : 'babel-loader',      
-        query: {
-          presets: ['react', 'es2015']
-       }
+        loader: 'babel-loader',
+        test: /\.js[x]?/,
+        exclude: /node_modules/,
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
       }
-    ]
-  }
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };
