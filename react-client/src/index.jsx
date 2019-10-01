@@ -30,7 +30,10 @@ class App extends React.Component {
 
   loginHandler(e) {
     e.preventDefault();
-    console.log('loginClick','loginHandling')
+    /*
+    need to confirm inputs are ok
+    */
+    console.log('loginClick',e.target.getAttribute('value'))
   }
 
   render () {
