@@ -16,7 +16,7 @@ const updateUserInfo = (userId, data) => {
 
 // Delete
 const deleteUser = (userId) => {
-    return User.deleteOne(userId);
+    return User.deleteOne({ 'email': userId });
 }
 
 module.exports = {
