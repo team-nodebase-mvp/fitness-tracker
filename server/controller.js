@@ -6,7 +6,7 @@ const {
 } = require('../database-mongo/dbHelpers.js');
 
 const getController = (req, res) => {
-    let { email } = req.body;
+    let { email } = req.query;
     getUserInfo(email)
     .then((response) => res.status(200).send(response))
     .catch((error) => res.status(400).send(error))
