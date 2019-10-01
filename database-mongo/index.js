@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
