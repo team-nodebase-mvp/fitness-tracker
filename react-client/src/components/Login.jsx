@@ -8,16 +8,24 @@ export default class Login extends Component{
       password: ''
     }
     //bind yo functions
+    this.inputHandler = this.inputHandler.bind(this);
   }
   //functions here
+  inputHandler(e) {
+    const { type, value } = e.target;
+    this.setState({
+      [type]: value
+    })
+  }
+
   render() {
     return(
       <form>
         <div>This is Login page</div>
         <label>Email:</label>
-        <input type="email"></input>
+        <input type="email" onChange={(e) => this.inputHandler(e)}></input>
         <label>Password:</label>
-        <input type="password"></input>
+        <input type="password" onChange={(e) => this.inputHandler(e)}></input>
         <input type="submit" value="Login" name={this.state} onClick={(e) => this.props.loginHandler(e)}></input>
       </form>
     )
