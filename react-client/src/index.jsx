@@ -11,7 +11,8 @@ class App extends React.Component {
     super(props);
     this.state = { 
       items: [],
-      page: 'homepage'
+      page: 'homepage',
+      email: ''
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
