@@ -4,7 +4,6 @@ import UserProfile from './components/UserProfle.jsx';
 import Homepage from './components/Homepage.jsx';
 import Login from './components/Login.jsx';
 import Registration from './components/Registration.jsx';
-import Axios from 'axios';
 
 
 class App extends React.Component {
