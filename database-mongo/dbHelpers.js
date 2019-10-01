@@ -12,8 +12,8 @@ const postUserInfo = (userObj) => {
 // Update
 
 // Delete
-const deleteUser = (userObj) => {
-    return User.deleteOne(userObj);
+const deleteUser = (userId) => {
+    return User.deleteOne(userId);
 }
 
 module.exports = {
