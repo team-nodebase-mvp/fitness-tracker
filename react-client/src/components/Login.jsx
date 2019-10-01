@@ -1,8 +1,13 @@
 import React from 'react';
 
 const Login = (props) => (
-  <div>
-      This is Login page
-  </div>
+  <form>
+      <div>This is Login page</div>
+      <label>Email:</label>
+      <input type="email"></input>
+      <label>Password:</label>
+      <input type="password"></input>
+      <input type="submit" value="Login"></input>
+  </form>
 )
 export default Login
