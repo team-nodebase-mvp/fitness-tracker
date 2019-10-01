@@ -4,6 +4,7 @@ import UserProfile from './components/UserProfle.jsx';
 import Homepage from './components/Homepage.jsx';
 import Login from './components/Login.jsx';
 import Registration from './components/Registration.jsx';
+import Axios from 'axios';
 
 
 class App extends React.Component {
@@ -16,6 +17,7 @@ class App extends React.Component {
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
+    this.registerHandler = this.registerHandler.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +45,18 @@ class App extends React.Component {
     })
   }
 
+  registerHandler(e) {
+    e.preventDefault();
+    const email = e.target.getAttribute('email');
+    const password = e.target.getAttribute('password');
+
+    //check database to make sure email doesn't already exist
+    //if email doesn't exist make a post to db & change state for page to 'userprofile'
+    this.setState({
+      page: 'userprofile',
+      email: email
+    })
+  }
 
   render () {
     switch(this.state.page){
@@ -53,7 +67,7 @@ class App extends React.Component {
       case 'login':
         return (<div><Login loginHandler={this.loginHandler}/></div>);
       case 'register':
-          return (<div><Registration /></div>);
+          return (<div><Registration registerHandler={this.registerHandler}/></div>);
     }
     // return (
     // <div>
