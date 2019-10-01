@@ -6,7 +6,7 @@ const {
 } = require('../database-mongo/dbHelpers.js');
 
 const getController = (req, res) => {
-    let { email } = req.body;
+    let { email } = req.query;
     getUserInfo(email)
     .then((response) => res.status(200).send(response))
     .catch((error) => res.status(400).send(error))
@@ -22,11 +22,13 @@ const postController = (req, res) => {
 const updateController = (req, res) => {
     let { query } = req;
     let { body } = req;
-    updateUserInfo(query, body)
+    updateUserInfo(query.email, body)
+    .then((response) => res.status(202).send(response))
+    .catch((error) => res.status(402).send(error))
 }
 
 const deleteController = (req, res) => {
-    let { email } = req.body;
+    let { email } = req.query;
     deleteUser(email)
     .then((response) => res.status(203).send(response))
     .catch((error) => res.status(403).send(error))
