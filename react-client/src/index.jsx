@@ -49,6 +49,7 @@ class App extends React.Component {
     e.preventDefault();
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
+    const form = document.getElementById('registerForm');
 
     const userObj = {
       email: email,
@@ -68,7 +69,7 @@ class App extends React.Component {
         this.setState({
           page: 'register',
           userAlert: `User ${email} already exists!`
-        }, () => document.getElementById('registerForm').reset())
+        }, () => form.reset())
       })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
 
