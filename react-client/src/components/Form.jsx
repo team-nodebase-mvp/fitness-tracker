@@ -37,12 +37,13 @@ class Form extends React.Component {
     event.persist();
     this.setState({
       [event.target.name]: event.target.value
-    }, () => console.log(event.target.value));
+    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
     console.log('clicked');
+    this.props.addExercise();
     this.setState({
       custom: '',
       sets: '',
