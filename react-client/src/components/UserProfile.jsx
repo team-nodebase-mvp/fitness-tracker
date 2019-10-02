@@ -27,14 +27,46 @@ class UserProfile extends React.Component {
   }
 
   addExercise() {
-    axios
-    .put(`/api/user?email=${this.props.email}`,
-      updateUserInfo(query, body)
-    )
-    .then(() => {
+    // Make email dynamic (grab from state)
+    axios.put(`/api/user?email=node@nodebase.com`, {
+      // Make object dynamic (grab from state)
+      exerciseCategory: 'weightLifting',
+      custom: 'benchPress',
+      sets: '5',
+      reps: '8',
+      weight: '100',
+      time: null,
+      distance: null,
+      speed: null,
+      incline: null,
+      resistance: null,
+      laps: null,
+      weightSelect: 'lbs',
+      distanceSelect: 'miles',
+      timeSelect: 'minutes',
+      speedSelect: 'mph'
+    })
+    .then((response) => {
+      console.log(response);
       this.getExercises();
     })
-    .catch(err => console.error(err));
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
+  deleteExercise() {
+    axios.put(`/api/pull?email=node@nodebase.com`, {
+      // Each exercise needs a unique identifier
+      exerciseCategory: 'weightLifting'
+    })
+    .then((response) => {
+      console.log(response);
+      this.getExercises();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   componentDidMount() {
@@ -51,7 +83,7 @@ class UserProfile extends React.Component {
         <div>
           <List userHistory={this.state.userHistory}/>
         </div>
-        <button type="button">THIS IS AN AXIOS TEST BUTTON</button>
+        <button type="button" onClick={this.addExercise}>THIS IS AN AXIOS TEST BUTTON</button>
       </div>
     )
   }
