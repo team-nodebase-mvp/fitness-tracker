@@ -36,7 +36,7 @@ class Form extends React.Component {
     event.persist();
     this.setState({
       [event.target.name]: event.target.value
-    }, () => console.log(event.target.value));
+    });
   }
 
   render() {
@@ -96,7 +96,7 @@ class Form extends React.Component {
         <span>
           <select className="speed-select" name="speedSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="mph" >mph</option>
-            <option value="kmph" >km/h</option>
+            <option value="kmph" >kmph</option>
           </select>
         </span>
         <span>
