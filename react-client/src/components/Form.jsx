@@ -5,20 +5,41 @@ class Form extends React.Component {
     super(props);
 
     this.state = {
-      exerciseCategory: ''
+      exerciseCategory: '',
+      custom: '',
+      sets: 0,
+      reps: '',
+      weight: '',
+      time: '',
+      distance: '',
+      speed: '',
+      incline: '',
+      resistance: '',
+      laps: '',
+      weightSelect: 'lbs',
+      distanceSelect: 'miles',
+      timeSelect: 'minutes',
+      speedSelect: 'mph'
     }
 
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleExerciseChange = this.handleExerciseChange.bind(this);
+  }
+
+  handleCategoryChange(event) {
+    this.setState({
+      exerciseCategory: event.target.value
+    })
   }
 
   handleExerciseChange(event) {
     this.setState({
-      exerciseCategory: event.target.value
-    }, () => console.log(this.state.exerciseCategory));
+      [event.target.name]: event.target.value
+    }, () => console.log(event.target.value));
   }
 
   render() {
-    const exerciseCategory = this.state.exerciseCategory;
+    let { exerciseCategory, custom, sets, reps, weight, time, distance, speed, incline, resistance, laps, weightSelect, distanceSelect, timeSelect, speedSelect } = this.state;
     let metrics;
     if (exerciseCategory === '') {
       metrics = '';
@@ -27,17 +48,17 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Sets: </label>
-          <input type="text" name="sets" className="metric" required />
+          <input name="sets" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
           <label>Reps: </label>
-          <input type="text" name="reps" className="metric" required />
+          <input name="reps" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
           <label>Weight: </label>
-          <input type="text" name="weight" className="metric" required />
+          <input name="weight" onChange={(event) => this.handleExerciseChange(event)} type="text" />
         <span>
-          <select className="weight-select" onChange={this.handleExerciseChange}>
+          <select className="weight-select" name="weightSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="lbs" >lbs</option>
             <option value="kgs" >kgs</option>
           </select>
@@ -49,37 +70,37 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Time: </label>
-          <input type="text" name="time" className="metric" />
+          <input name="time" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
-          <select className="time-select" onChange={this.handleExerciseChange}>
+          <select className="time-select" name="timeSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="minutes" >minutes</option>
             <option value="hours" >hours</option>
           </select>
         </span>
         <span>
           <label>Distance: </label>
-          <input type="text" name="distance" className="metric" />
+          <input name="distance" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
-          <select className="distance-select" onChange={this.handleExerciseChange}>
+          <select className="distance-select" name="distanceSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="miles" >mi</option>
-            <option value="km" >km</option>
+            <option value="kilometers" >km</option>
           </select>
         </span>
         <span>
           <label>Speed: </label>
-          <input type="text" name="speed" className="metric" />
+          <input name="speed" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
-          <select className="speed-select" onChange={this.handleExerciseChange}>
+          <select className="speed-select" name="speedSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="mph" >mph</option>
             <option value="kmph" >km/h</option>
           </select>
         </span>
         <span>
           <label>Incline: </label>
-          <input type="text" name="incline" className="metric" />
+          <input name="incline" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
       </form>;
     } else if (exerciseCategory === 'cycling') {
@@ -87,37 +108,37 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Time: </label>
-          <input type="text" name="time" className="metric" />
+          <input name="time" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
-          <select className="time-select" onChange={this.handleExerciseChange}>
+          <select className="time-select" name="timeSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="minutes" >minutes</option>
             <option value="hours" >hours</option>
           </select>
         </span>
         <span>
           <label>Distance: </label>
-          <input type="text" name="distance" className="metric" />
+          <input name="distance" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
         </span>
         <span>
-          <select className="distance-select" onChange={this.handleExerciseChange}>
+          <select className="distance-select" name="distanceSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="miles" >mi</option>
-            <option value="km" >km</option>
+            <option value="kilometers" >km</option>
           </select>
         </span>
         <span>
           <label>Speed: </label>
-          <input type="text" name="speed" className="metric" />
+          <input type="text" name="speed" onChange={(event) => this.handleExerciseChange(event)}/>
         </span>
         <span>
-          <select className="speed-select" onChange={this.handleExerciseChange}>
+          <select className="speed-select" cname="speedSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="mph" >mph</option>
             <option value="kmph" >km/h</option>
           </select>
         </span>
         <span>
           <label>Resistance: </label>
-          <input type="text" name="resistance" className="metric" />
+          <input type="text" name="resistance" onChange={(event) => this.handleExerciseChange(event)}/>
         </span>
       </form>;
     } else {
@@ -125,34 +146,34 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Time: </label>
-          <input type="text" name="time" className="metric" />
+          <input type="text" name="time" onChange={(event) => this.handleExerciseChange(event)}/>
         </span>
         <span>
-          <select className="time-select" onChange={this.handleExerciseChange}>
+          <select className="time-select" name="timeSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="minutes" >minutes</option>
             <option value="hours" >hours</option>
           </select>
         </span>
         <span>
           <label>Laps: </label>
-          <input type="text" name="distance" className="metric" />
+          <input type="text" name="distance" onChange={(event) => this.handleExerciseChange(event)}/>
         </span>
         <span>
           <label>Distance: </label>
-          <input type="text" name="speed" className="metric" />
+          <input type="text" name="speed" onChange={(event) => this.handleExerciseChange(event)}/>
         </span>
         <span>
-          <select className="distance-select" onChange={this.handleExerciseChange}>
+          <select className="distance-select" name="distanceSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="miles" >mi</option>
-            <option value="km" >km</option>
+            <option value="kilometers" >km</option>
           </select>
         </span>
         <span>
           <label>Speed: </label>
-          <input type="text" name="laps" className="metric" />
+          <input type="text" name="laps" onChange={(event) => this.handleExerciseChange(event)}/>
         </span>
         <span>
-          <select className="speed-select" onChange={this.handleExerciseChange}>
+          <select className="speed-select" name="speedSelect" onChange={(event) => this.handleExerciseChange(event)}>
             <option value="mph" >mph</option>
             <option value="kmph" >km/h</option>
           </select>
@@ -163,7 +184,7 @@ class Form extends React.Component {
     return (
       <div>
         <div className="dropdown">
-          <select className="exercise-select" onChange={this.handleExerciseChange}>
+          <select className="exercise-select" name="exerciseSelect" onChange={this.handleCategoryChange}>
             <option value=""  >--Please choose an exercise--</option>
             <option value="weightLifting" >Weight-Lifting</option>
             <option value="runningWalking" >Running/Walking</option>
@@ -173,9 +194,9 @@ class Form extends React.Component {
         </div>
         <div>
           <form className="form">
-            <div >
+            <div id="custom">
               <label>Custom: </label>
-              <input type="text" name="custom" id="custom" required />
+              <input name="custom" onChange={(event) => this.handleExerciseChange(event)} type="text"/>
             </div>
           </form>
         </div>
