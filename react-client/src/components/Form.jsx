@@ -8,14 +8,14 @@ class Form extends React.Component {
       exerciseCategory: '',
       custom: '',
       sets: 0,
-      reps: '',
-      weight: '',
-      time: '',
-      distance: '',
-      speed: '',
-      incline: '',
-      resistance: '',
-      laps: '',
+      reps: 0,
+      weight: 0,
+      time: 0,
+      distance: 0,
+      speed: 0,
+      incline: 0,
+      resistance: 0,
+      laps: 0,
       weightSelect: 'lbs',
       distanceSelect: 'miles',
       timeSelect: 'minutes',
@@ -33,6 +33,7 @@ class Form extends React.Component {
   }
 
   handleExerciseChange(event) {
+    event.persist();
     this.setState({
       [event.target.name]: event.target.value
     }, () => console.log(event.target.value));
