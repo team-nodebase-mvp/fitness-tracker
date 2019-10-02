@@ -67,15 +67,15 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Sets: </label>
-          <input name="sets" value={sets} onChange={this.handleExerciseChange} type="text"/>
+          <input name="sets" value={sets} onChange={this.handleExerciseChange} placeholder="number of sets" type="number"/>
         </span>
         <span>
           <label>Reps: </label>
-          <input name="reps" value={reps} onChange={this.handleExerciseChange} type="text"/>
+          <input name="reps" value={reps} onChange={this.handleExerciseChange} placeholder="number of reps" type="number"/>
         </span>
         <span>
           <label>Weight: </label>
-          <input name="weight" value={weight} onChange={this.handleExerciseChange} type="text" />
+          <input name="weight" value={weight} onChange={this.handleExerciseChange} placeholder="weight" type="number"/>
         <span>
           <select className="weight-select" name="weightSelect" onChange={this.handleExerciseChange}>
             <option value="lbs" >lbs</option>
@@ -89,7 +89,7 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Time: </label>
-          <input name="time" value={time} onChange={this.handleExerciseChange} type="text"/>
+          <input name="time" value={time} onChange={this.handleExerciseChange} placeholder="minutes or hours" type="number"/>
         </span>
         <span>
           <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
@@ -99,7 +99,7 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Distance: </label>
-          <input name="distance" value={distance} onChange={this.handleExerciseChange} type="text"/>
+          <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
@@ -109,7 +109,7 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Speed: </label>
-          <input name="speed" value={speed} onChange={this.handleExerciseChange} type="text"/>
+          <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
@@ -119,7 +119,11 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Incline: </label>
-          <input name="incline" value={incline} onChange={this.handleExerciseChange} type="text"/>
+          <input name="incline" value={incline} placeholder="incline setting" onChange={this.handleExerciseChange} type="number"/>
+        </span>
+        <span>
+          <label>Laps: </label>
+          <input name="laps" value={laps} placeholder="number of laps" onChange={this.handleExerciseChange} type="number"/>
         </span>
       </form>;
     } else if (exerciseCategory === 'cycling') {
@@ -127,7 +131,7 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Time: </label>
-          <input name="time" value={time} onChange={this.handleExerciseChange} type="text"/>
+          <input name="time" value={time} placeholder="minutes or hours" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
@@ -137,7 +141,7 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Distance: </label>
-          <input name="distance" value={distance} onChange={this.handleExerciseChange} type="text"/>
+          <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
@@ -147,7 +151,7 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Speed: </label>
-          <input type="text" name="speed" value={speed} onChange={this.handleExerciseChange}/>
+          <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
@@ -157,7 +161,7 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Resistance: </label>
-          <input type="text" name="resistance" value={resistance} onChange={this.handleExerciseChange}/>
+          <input name="resistance" value={resistance} placeholder="resistance setting" onChange={this.handleExerciseChange} type="number"/>
         </span>
       </form>;
     } else {
@@ -165,7 +169,7 @@ class Form extends React.Component {
       <form className="form">
         <span>
           <label>Time: </label>
-          <input type="text" name="time" value={time} onChange={this.handleExerciseChange}/>
+          <input name="time" value={time} placeholder="minutes or hours" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
@@ -175,11 +179,11 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Laps: </label>
-          <input type="text" name="distance" value={distance} onChange={this.handleExerciseChange}/>
+          <input name="laps" value={laps} placeholder="number of laps" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <label>Distance: </label>
-          <input type="text" name="speed" value={speed} onChange={this.handleExerciseChange}/>
+          <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
@@ -189,7 +193,7 @@ class Form extends React.Component {
         </span>
         <span>
           <label>Speed: </label>
-          <input type="text" name="laps" value={laps} onChange={this.handleExerciseChange}/>
+          <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number"/>
         </span>
         <span>
           <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
@@ -215,7 +219,7 @@ class Form extends React.Component {
           <form className="form">
             <div id="custom">
               <label>Custom: </label>
-              <input name="custom" value={custom} onChange={this.handleExerciseChange} type="text"/>
+              <input name="custom" value={custom} onChange={this.handleExerciseChange} placeholder="type of exercise, etc." type="text"/>
             </div>
           </form>
         </div>
