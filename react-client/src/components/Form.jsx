@@ -42,7 +42,13 @@ class Form extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('clicked');
+    const userObj = {
+      email: this.props.email,
+      date: new Date(),
+      timestamp: Date.now(),
+      userHistoryObj: this.state
+    }
+    console.log('clicked', userObj);
     this.setState({
       custom: '',
       sets: '',

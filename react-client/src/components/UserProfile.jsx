@@ -79,7 +79,7 @@ class UserProfile extends React.Component {
       <div>
         {this.props.userAlert}
         <div>
-          <Form />
+          <Form email={this.props.email}/>
         </div>
         <div>
           <List userHistory={this.state.userHistory}/>
