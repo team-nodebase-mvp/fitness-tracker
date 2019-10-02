@@ -67,8 +67,8 @@ class App extends React.Component {
       .catch((err) => {
         this.setState({
           page: 'register',
-          userAlert: `User ${this.state.email} already exists!`
-        }, () => console.log(`ERROR POSTING: ${err}`))
+          userAlert: `User ${email} already exists!`
+        }, () => document.getElementById('registerForm').reset())
       })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
 
