@@ -44,11 +44,18 @@ class App extends React.Component {
     }
     Axios.get('/api/user', {params:userObj})
       .then((data) => {
-        this.setState({
-          page: 'userprofile',
-          email: email,
-          userAlert: `Welcome ${email}!`
-        }, () => console.log(`post success`, data.data))
+        if(data.password === password){
+          this.setState({
+            page: 'userprofile',
+            email: email,
+            userAlert: `Welcome ${email}!`
+          }, () => console.log(`post success`, data.data))
+        }else {
+          this.setState({
+            page: 'login',
+            userAlert: `Login credentials were incorrect!`
+          }, () => form.reset())
+        }
       })
       .catch((err) => {
         this.setState({
