@@ -206,6 +206,7 @@ class Form extends React.Component {
 
     return (
       <div>
+        <h3>Add an Exercise!</h3>
         <div className="dropdown">
           <select className="exercise-select" name="exerciseSelect" onChange={this.handleCategoryChange}>
             <option value=""  >--Please choose an exercise--</option>
