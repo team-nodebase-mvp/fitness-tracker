@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserProfile from './components/UserProfle.jsx';
+import UserProfile from './components/UserProfile.jsx';
 import Homepage from './components/Homepage.jsx';
 import Login from './components/Login.jsx';
 import Registration from './components/Registration.jsx';
@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = { 
       items: [],
       page: 'homepage',
-      email: ''
+      email: '',
+      userAlert: ''
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
@@ -38,16 +39,17 @@ class App extends React.Component {
     //check database to authenticate username and password
 
     //if authenticated, change state for page to 'userprofile'
-    this.setState({
-      page: 'userprofile',
-      email: email
-    })
+    // this.setState({
+    //   page: 'userprofile',
+    //   email: email
+    // })
   }
 
   registerHandler(e) {
     e.preventDefault();
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
+    const form = document.getElementById('registerForm');
 
     const userObj = {
       email: email,
@@ -57,18 +59,20 @@ class App extends React.Component {
     //check database to make sure email doesn't already exist
     Axios.post('/api/user', {params:userObj})
       .then((data) => {
-        console.log(`post success`, data.data)
+        this.setState({
+          page: 'userprofile',
+          email: email,
+          userAlert: `Welcome ${email}!`
+        }, () => console.log(`post success`, data.data))
       })
-      .catch(err => {
-        this.setState({
-          page: 'login'
-        })
+      .catch((err) => {
+        this.setState({
+          page: 'register',
+          userAlert: `User ${email} already exists!`
+        }, () => form.reset())
       })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
-    this.setState({
-      page: 'userprofile',
-      email: email
-    })
+
   }
 
   render () {
@@ -76,11 +80,11 @@ class App extends React.Component {
       case 'homepage':
         return (<div><Homepage clickHandler={this.clickHandler}/></div>);
       case 'userprofile':
-        return (<div><UserProfile email={this.state.email}/></div>);
+        return (<div><UserProfile userAlert={this.state.userAlert}/></div>);
       case 'login':
         return (<div><Login loginHandler={this.loginHandler}/></div>);
       case 'register':
-          return (<div><Registration registerHandler={this.registerHandler}/></div>);
+        return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert}/></div>);
     }
     // return (
     // <div>

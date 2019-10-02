@@ -44,12 +44,14 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div>
+        {this.props.userAlert}
         <div>
           <Form />
         </div>
         <div>
           <List userHistory={this.state.userHistory}/>
         </div>
+        <button type="button">THIS IS AN AXIOS TEST BUTTON</button>
       </div>
     )
   }

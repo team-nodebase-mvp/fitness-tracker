@@ -22,7 +22,7 @@ export default class Registration extends Component{
   render() {
     const { email, password, password_two } = this.state;
     return(
-      <form email={ email } password={ password } password_two={ password_two } onSubmit={(e) => this.props.registerHandler(e)}>
+      <form id='registerForm' email={ email } password={ password } password_two={ password_two } onSubmit={(e) => this.props.registerHandler(e)}>
         <div>This is Registration page</div>
         <div>
           <label>Email:</label>
@@ -39,6 +39,7 @@ export default class Registration extends Component{
         <div>
         <input type="submit" name="submit" value="Register"></input>
         </div>
+        <div>{this.props.userAlert}</div>
       </form>
     )
   }
