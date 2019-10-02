@@ -13,6 +13,7 @@ class UserProfile extends React.Component {
 
     this.getExercises = this.getExercises.bind(this);
     this.addExercise = this.addExercise.bind(this);
+    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   getExercises() {
@@ -83,7 +84,8 @@ class UserProfile extends React.Component {
         <div>
           <List userHistory={this.state.userHistory}/>
         </div>
-        <button type="button" onClick={this.addExercise}>THIS IS AN AXIOS TEST BUTTON</button>
+        <button type="button" onClick={this.addExercise}>THIS BUTTON ADDS AN EXERCISE</button>
+        <button type="button" onClick={this.deleteExercise}>THIS BUTTON REMOVES AN EXERCISE</button>
       </div>
     )
   }

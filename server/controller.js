@@ -2,6 +2,7 @@ const {
     getUserInfo,
     postUserInfo,
     updateUserInfo,
+    removeUserInfo,
     deleteUser
 } = require('../database-mongo/dbHelpers.js');
 
@@ -27,6 +28,13 @@ const updateController = (req, res) => {
     .then((response) => res.status(202).send(response))
     .catch((error) => res.status(402).send(error))
 }
+const removeController = (req, res) => {
+    let { query } = req;
+    let { body } = req;
+    removeUserInfo(query.email, body)
+    .then((response) => res.status(202).send(response))
+    .catch((error) => res.status(402).send(error))
+}
 
 const deleteController = (req, res) => {
     let { email } = req.query;
@@ -39,6 +47,7 @@ module.exports = {
     getController,
     postController,
     updateController,
+    removeController,
     deleteController
 }
 
