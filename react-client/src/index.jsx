@@ -62,7 +62,7 @@ class App extends React.Component {
         this.setState({
           page: 'userprofile',
           email: email,
-          userAlert: `Welcome ${this.state.email}!`
+          userAlert: `Welcome ${email}!`
         }, () => console.log(`post success`, data.data))
       })
       .catch((err) => {
