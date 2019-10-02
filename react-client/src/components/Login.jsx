@@ -21,7 +21,7 @@ export default class Login extends Component{
   render() {
     const { email, password } = this.state;
     return(
-      <form email={ email } password={ password } onSubmit={(e) => this.props.loginHandler(e)}>
+      <form id="loginForm" email={ email } password={ password } onSubmit={(e) => this.props.loginHandler(e)}>
         <div>This is Login page</div>
         <label>Email:</label>
         <input type="email" onChange={(e) => this.inputHandler(e)} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input>
