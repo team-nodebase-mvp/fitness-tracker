@@ -6,15 +6,16 @@ const {
 } = require('../database-mongo/dbHelpers.js');
 
 const getController = (req, res) => {
-    let { email } = req.query;
+    let { email, password } = req.query;
     getUserInfo(email)
     .then((response) => res.status(200).send(response))
     .catch((error) => res.status(400).send(error))
 }
 
 const postController = (req, res) => {
-    let { body } = req;
-    postUserInfo(body)
+    // res.send(200).status(req.query)
+    let { email, password, userHistory } = req.body.params;
+    postUserInfo({ email:email, password:password, userHistory: userHistory })
     .then(() => res.status(201).send('Posted!'))
     .catch((error) => res.status(401).send(error))
 }

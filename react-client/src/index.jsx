@@ -6,7 +6,6 @@ import Login from './components/Login.jsx';
 import Registration from './components/Registration.jsx';
 import Axios from 'axios';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +49,21 @@ class App extends React.Component {
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
 
+    const userObj = {
+      email: email,
+      password: password,
+      userHistory: []
+    }
     //check database to make sure email doesn't already exist
+    Axios.post('/api/user', {params:userObj})
+      .then((data) => {
+        console.log(`post success`, data.data)
+      })
+      .catch(err => {
+        this.setState({
+          page: 'login'
+        })
+      })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
     this.setState({
       page: 'userprofile',
