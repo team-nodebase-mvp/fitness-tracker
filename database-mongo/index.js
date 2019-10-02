@@ -14,7 +14,27 @@ db.once('open', function() {
 var userSchema = new mongoose.Schema({
   email: {type: String, index: { unique: true }},
   password: String,
-  userHistory: Array
+  userHistory: [
+    { 
+      date: Date,
+      timestamp: String,
+      exerciseCategory: String,
+      custom: String,
+      sets: Number,
+      reps: Number,
+      weight: Number,
+      time: Number,
+      distance: Number,
+      speed: Number,
+      incline: Number,
+      resistance: Number,
+      laps: Number,
+      weightSelect: String,
+      distanceSelect: String,
+      timeSelect: String,
+      speedSelect: String
+    }
+  ]
 });
 
 var User = mongoose.model('User', userSchema);
