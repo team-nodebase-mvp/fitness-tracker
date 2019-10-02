@@ -71,10 +71,10 @@ class App extends React.Component {
         })
       })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
-    this.setState({
-      page: 'userprofile',
-      email: email
-    })
+    // this.setState({
+    //   page: 'userprofile',
+    //   email: email
+    // })
   }
 
   render () {
