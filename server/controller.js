@@ -1,10 +1,18 @@
 const {
+    authUser,
     getUserInfo,
     postUserInfo,
     updateUserInfo,
     removeUserInfo,
     deleteUser
 } = require('../database-mongo/dbHelpers.js');
+
+const authController = (req, res) => {
+    let { email, password } = req.query;
+    authUser(email, password)
+    .then((response) => res.status(200).send(response))
+    .catch((error) => res.status(400).send(error))
+}
 
 const getController = (req, res) => {
     let { email, password } = req.query;
@@ -44,6 +52,7 @@ const deleteController = (req, res) => {
 }
 
 module.exports = {
+    authController,
     getController,
     postController,
     updateController,
