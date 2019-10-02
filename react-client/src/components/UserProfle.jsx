@@ -8,7 +8,7 @@ class UserProfile extends React.Component {
     super(props);
 
     this.state = {
-      exercises: ['exercise1', 'exercise2', 'exercise3']
+      userHistory: []
     };
 
     this.getExercises = this.getExercises.bind(this);
@@ -17,18 +17,20 @@ class UserProfile extends React.Component {
 
   getExercises() {
     axios
-    .get('/exercises')
+    .get('/user')
     .then(() => {
       this.setState({
-        exercises: exercises.data
-      });
+        userHistory: userHistory.data
+      }, () => console.log(userHistory.data));
     })
     .catch(err => console.error(err));
   }
 
-  addExercise(date, exerciseCategory, custom, sets, reps, weight, time, distance, speed, incline, resistance, laps) {
+  addExercise() {
     axios
-    .post(`exercises${email}`, { date, exerciseCategory, custom, sets, reps, weight, time, distance, speed, incline, resistance, laps })
+    .put(`/api/user?email=${this.props.email}`, 
+      updateUserInfo(query, body)
+    )
     .then(() => {
       this.getExercises();
     })
@@ -46,7 +48,7 @@ class UserProfile extends React.Component {
           <Form />
         </div>
         <div>
-          <List exercises={this.state.exercises}/>
+          <List userHistory={this.state.userHistory}/>
         </div>
       </div>
     )
