@@ -58,23 +58,20 @@ class App extends React.Component {
     //check database to make sure email doesn't already exist
     Axios.post('/api/user', {params:userObj})
       .then((data) => {
-        console.log(`post success`, data.data)
-      }, () => this.setState({
-        page: 'userprofile',
-        email: email,
-        userAlert: `Welcome ${this.state.email}!`
-      }))
-      .catch(err => {
-        this.setState({
+        this.setState({
+          page: 'userprofile',
+          email: email,
+          userAlert: `Welcome ${this.state.email}!`
+        }, () => console.log(`post success`, data.data))
+      })
+      .catch((err) => {
+        this.setState({
           page: 'register',
           userAlert: `User ${this.state.email} already exists!`
         }, () => console.log(`ERROR POSTING: ${err}`))
       })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
-    // this.setState({
-    //   page: 'userprofile',
-    //   email: email
-    // })
+
   }
 
   render () {
