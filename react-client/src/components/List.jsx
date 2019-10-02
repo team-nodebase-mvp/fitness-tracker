@@ -1,11 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
 
-const List = ( { exercises } ) => (
+const List = ( { userHistory } ) => (
   <div>
-    <h4> List Component </h4>
-    There are { exercises.length } exercises.
-    { exercises.map((exercise, i)=> <ListItem exercise={exercise} key={i} />)}
+    <h4> Exercises </h4>
+    You've done { userHistory.length } exercises in the last 30 days.
+    { userHistory.map((exercise, i)=> <ListItem exercise={exercise} key={i} />)}
   </div>
 )
 

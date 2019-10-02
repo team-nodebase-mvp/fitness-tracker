@@ -36,6 +36,12 @@ class Form extends React.Component {
         <span>
           <label>Weight: </label>
           <input type="text" name="weight" className="metric" required />
+        <span>
+          <select className="weight-select" onChange={this.handleExerciseChange}>
+            <option value="lbs" >lbs</option>
+            <option value="kgs" >kgs</option>
+          </select>
+        </span>
         </span>
       </form>;
     } else if (exerciseCategory === 'runningWalking') {
@@ -46,12 +52,30 @@ class Form extends React.Component {
           <input type="text" name="time" className="metric" />
         </span>
         <span>
+          <select className="time-select" onChange={this.handleExerciseChange}>
+            <option value="minutes" >minutes</option>
+            <option value="hours" >hours</option>
+          </select>
+        </span>
+        <span>
           <label>Distance: </label>
           <input type="text" name="distance" className="metric" />
         </span>
         <span>
+          <select className="distance-select" onChange={this.handleExerciseChange}>
+            <option value="miles" >mi</option>
+            <option value="km" >km</option>
+          </select>
+        </span>
+        <span>
           <label>Speed: </label>
           <input type="text" name="speed" className="metric" />
+        </span>
+        <span>
+          <select className="speed-select" onChange={this.handleExerciseChange}>
+            <option value="mph" >mph</option>
+            <option value="kmph" >km/h</option>
+          </select>
         </span>
         <span>
           <label>Incline: </label>
@@ -66,12 +90,30 @@ class Form extends React.Component {
           <input type="text" name="time" className="metric" />
         </span>
         <span>
+          <select className="time-select" onChange={this.handleExerciseChange}>
+            <option value="minutes" >minutes</option>
+            <option value="hours" >hours</option>
+          </select>
+        </span>
+        <span>
           <label>Distance: </label>
           <input type="text" name="distance" className="metric" />
         </span>
         <span>
+          <select className="distance-select" onChange={this.handleExerciseChange}>
+            <option value="miles" >mi</option>
+            <option value="km" >km</option>
+          </select>
+        </span>
+        <span>
           <label>Speed: </label>
           <input type="text" name="speed" className="metric" />
+        </span>
+        <span>
+          <select className="speed-select" onChange={this.handleExerciseChange}>
+            <option value="mph" >mph</option>
+            <option value="kmph" >km/h</option>
+          </select>
         </span>
         <span>
           <label>Resistance: </label>
@@ -86,6 +128,12 @@ class Form extends React.Component {
           <input type="text" name="time" className="metric" />
         </span>
         <span>
+          <select className="time-select" onChange={this.handleExerciseChange}>
+            <option value="minutes" >minutes</option>
+            <option value="hours" >hours</option>
+          </select>
+        </span>
+        <span>
           <label>Laps: </label>
           <input type="text" name="distance" className="metric" />
         </span>
@@ -94,8 +142,20 @@ class Form extends React.Component {
           <input type="text" name="speed" className="metric" />
         </span>
         <span>
+          <select className="distance-select" onChange={this.handleExerciseChange}>
+            <option value="miles" >mi</option>
+            <option value="km" >km</option>
+          </select>
+        </span>
+        <span>
           <label>Speed: </label>
           <input type="text" name="laps" className="metric" />
+        </span>
+        <span>
+          <select className="speed-select" onChange={this.handleExerciseChange}>
+            <option value="mph" >mph</option>
+            <option value="kmph" >km/h</option>
+          </select>
         </span>
       </form>;
     }
