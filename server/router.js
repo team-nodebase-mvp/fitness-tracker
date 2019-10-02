@@ -4,6 +4,7 @@ const {
     getController,
     postController,
     updateController,
+    removeController,
     deleteController
 } = require('./controller.js');
 
@@ -13,5 +14,9 @@ router
     .post(postController)
     .put(updateController)
     .delete(deleteController)
+
+router
+    .route('/pull')
+    .put(removeController)
 
 module.exports = router;
