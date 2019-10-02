@@ -19,7 +19,7 @@ router
 router
     .route('/login')
     .get(authController)
-    
+
 router
     .route('/pull')
     .put(removeController)
