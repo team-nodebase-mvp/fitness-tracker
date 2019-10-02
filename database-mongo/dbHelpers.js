@@ -6,6 +6,7 @@ const getUserInfo = (userId) => {
 }
 // Post a User
 const postUserInfo = (userObj) => {
+    console.log(`userObj`,userObj)
     return User.create(userObj);
 }
 

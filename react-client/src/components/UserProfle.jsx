@@ -28,7 +28,7 @@ class UserProfile extends React.Component {
 
   addExercise() {
     axios
-    .put(`/api/user?email=${this.props.email}`, 
+    .put(`/api/user?email=${this.props.email}`,
       updateUserInfo(query, body)
     )
     .then(() => {
