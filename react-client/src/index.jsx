@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = { 
       items: [],
       page: 'homepage',
-      email: ''
+      email: '',
+      userAlert: ''
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
@@ -58,10 +59,15 @@ class App extends React.Component {
     Axios.post('/api/user', {params:userObj})
       .then((data) => {
         console.log(`post success`, data.data)
-      })
+      }, () => this.setState({
+        page: 'userprofile',
+        email: email,
+        userAlert: `Welcome ${this.state.email}!`
+      }))
       .catch(err => {
         this.setState({
-          page: 'login'
+          page: 'register',
+          userAlert: `User ${this.state.email} already exists!`
         })
       })
     //if email doesn't exist make a post to db & change state for page to 'userprofile'
@@ -76,11 +82,15 @@ class App extends React.Component {
       case 'homepage':
         return (<div><Homepage clickHandler={this.clickHandler}/></div>);
       case 'userprofile':
+<<<<<<< HEAD
+        return (<div><UserProfile userAlert={this.state.userAlert}/></div>);
+=======
         return (<div><UserProfile email={this.state.email}/></div>);
+>>>>>>> a9eb5ee90ee0fe88d2ad3ad8f22cd1e128aacc9b
       case 'login':
         return (<div><Login loginHandler={this.loginHandler}/></div>);
       case 'register':
-          return (<div><Registration registerHandler={this.registerHandler}/></div>);
+          return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert}/></div>);
     }
     // return (
     // <div>
