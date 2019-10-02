@@ -76,7 +76,7 @@ class App extends React.Component {
       case 'homepage':
         return (<div><Homepage clickHandler={this.clickHandler}/></div>);
       case 'userprofile':
-        return (<div><UserProfile /></div>);
+        return (<div><UserProfile email={this.state.email}/></div>);
       case 'login':
         return (<div><Login loginHandler={this.loginHandler}/></div>);
       case 'register':
