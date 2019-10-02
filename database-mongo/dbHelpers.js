@@ -1,5 +1,10 @@
 const User = require('./index.js');
 
+// Authenticate User Login
+const authUser = (userId, password) => {
+    return User.findOne({ 'email': userId, 'password': password });
+}
+
 // Get a User
 const getUserInfo = (userId) => {
     return User.findOne({ 'email': userId });
@@ -25,6 +30,7 @@ const deleteUser = (userId) => {
 }
 
 module.exports = {
+    authUser,
     getUserInfo,
     postUserInfo,
     updateUserInfo,

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {
+    authController,
     getController,
     postController,
     updateController,
@@ -15,6 +16,10 @@ router
     .put(updateController)
     .delete(deleteController)
 
+router
+    .route('/login')
+    .get(authController)
+    
 router
     .route('/pull')
     .put(removeController)
