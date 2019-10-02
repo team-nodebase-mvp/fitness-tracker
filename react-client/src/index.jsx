@@ -36,8 +36,26 @@ class App extends React.Component {
     e.preventDefault();
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
+    const form = document.getElementById('loginForm');
     //check database to authenticate username and password
-
+    const userObj = {
+      email: email,
+      password: password
+    }
+    Axios.get('/api/user', {params:userObj})
+      .then((data) => {
+        this.setState({
+          page: 'userprofile',
+          email: email,
+          userAlert: `Welcome ${email}!`
+        }, () => console.log(`post success`, data.data))
+      })
+      .catch((err) => {
+        this.setState({
+          page: 'login',
+          userAlert: `Login credentials were incorrect!`
+        }, () => form.reset())
+      })
     //if authenticated, change state for page to 'userprofile'
     // this.setState({
     //   page: 'userprofile',
@@ -71,8 +89,6 @@ class App extends React.Component {
           userAlert: `User ${email} already exists!`
         }, () => form.reset())
       })
-    //if email doesn't exist make a post to db & change state for page to 'userprofile'
-
   }
 
   render () {
