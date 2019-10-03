@@ -82,10 +82,12 @@ class UserProfile extends React.Component {
           <Form />
         </div>
         <div>
-          <List userHistory={this.state.userHistory}/>
+          <List 
+          userHistory={this.state.userHistory}
+          addExercise={this.addExercise}
+          deleteExercise={this.deleteExercise}
+          />
         </div>
-        <button type="button" onClick={this.addExercise}>THIS BUTTON ADDS AN EXERCISE</button>
-        <button type="button" onClick={this.deleteExercise}>THIS BUTTON REMOVES AN EXERCISE</button>
       </div>
     )
   }
