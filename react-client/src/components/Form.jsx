@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 
 class Form extends React.Component {
   constructor(props) {
@@ -42,25 +43,58 @@ class Form extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const s = this.state;
     const userObj = {
       email: this.props.email,
-      date: new Date(),
-      timestamp: Date.now(),
-      userHistoryObj: this.state
+      userHistoryObj: {
+        date: new Date(),
+        timestamp: Date.now(),
+        exerciseCategory: s.exerciseCategory,
+        custom: s.custom,
+        sets: s.sets,
+        reps: s.reps,
+        weight: s.weight,
+        time: s.time,
+        distance: s.distance,
+        speed: s.speed,
+        incline: s.incline,
+        resistance: s.resistance,
+        laps: s.laps,
+        weightSelect: s.weightSelect,
+        distanceSelect: s.distanceSelect,
+        timeSelect: s.timeSelect,
+        speedSelect: s.speedSelect
+      }
     }
-    console.log('clicked', userObj);
-    this.setState({
-      custom: '',
-      sets: '',
-      reps: '',
-      weight: '',
-      time: '',
-      distance: '',
-      speed: '',
-      incline: '',
-      resistance: '',
-      laps: ''
-    })
+
+    Axios.put('/api/user', {params:userObj})
+      .then((data) => {
+        console.log(`added the data: ${JSON.stringify(data)}`)
+        // this.setState({
+        //   page: 'userprofile',
+        //   email: email,
+        //   userAlert: `Welcome ${email}!`
+        // }, () => console.log(`post success`, data.data))
+      },()=>console.log('clicked', userObj))
+      .catch((err) => {
+        this.setState({
+          page: 'userprofile',
+          userAlert: `Could not save user data!`
+        }, () => form.reset())
+      })
+    // console.log('clicked', userObj);
+    // this.setState({
+    //   custom: '',
+    //   sets: '',
+    //   reps: '',
+    //   weight: '',
+    //   time: '',
+    //   distance: '',
+    //   speed: '',
+    //   incline: '',
+    //   resistance: '',
+    //   laps: ''
+    // })
   }
 
   render() {

@@ -30,9 +30,10 @@ const postController = (req, res) => {
 }
 
 const updateController = (req, res) => {
-    let { query } = req;
-    let { body } = req;
-    updateUserInfo(query.email, body)
+    let { email, userHistoryObj } = req.body.params;
+    // let { query } = req;
+    // let { body } = req;
+    updateUserInfo(email, userHistoryObj)
     .then((response) => res.status(202).send(response))
     .catch((error) => res.status(402).send(error))
 }
