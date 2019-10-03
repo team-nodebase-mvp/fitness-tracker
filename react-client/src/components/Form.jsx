@@ -48,7 +48,7 @@ class Form extends React.Component {
     const userObj = {
       email: this.props.email,
       userHistoryObj: {
-        date: convertDate(new Date()),
+        date: new Date(),
         timestamp: Date.now(),
         exerciseCategory: s.exerciseCategory,
         custom: s.custom,
