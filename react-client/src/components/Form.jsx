@@ -26,7 +26,7 @@ class Form extends React.Component {
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleExerciseChange = this.handleExerciseChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   handleCategoryChange(event) {
@@ -42,13 +42,14 @@ class Form extends React.Component {
     });
   }
 
+  
   handleSubmit(event) {
     event.preventDefault();
     const s = this.state;
     const userObj = {
       email: this.props.email,
       userHistoryObj: {
-        date: new Date(),
+        date: convertDate(new Date()),
         timestamp: Date.now(),
         exerciseCategory: s.exerciseCategory,
         custom: s.custom,
@@ -81,6 +82,20 @@ class Form extends React.Component {
           userAlert: `Could not save user data!`
         }, () => form.reset())
       })
+  }
+
+  deleteExercise() {
+    axios.put(`/api/pull?email=${this.props.email}`, {
+      // Each exercise needs a unique identifier
+      timestamp: ''
+    })
+    .then((response) => {
+      console.log(response);
+      this.getExercises();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   getExercises() {

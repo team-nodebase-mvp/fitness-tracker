@@ -12,7 +12,6 @@ class UserProfile extends React.Component {
     };
 
     this.getExercises = this.getExercises.bind(this);
-    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   getExercises() {
@@ -27,20 +26,6 @@ class UserProfile extends React.Component {
       console.log(`getdatt`,data)
     })
     .catch(err => console.error(err));
-  }
-
-  deleteExercise() {
-    axios.put(`/api/pull?email=node@nodebase.com`, {
-      // Each exercise needs a unique identifier
-      exerciseCategory: 'weightLifting'
-    })
-    .then((response) => {
-      console.log(response);
-      this.getExercises();
-    })
-    .catch((error) => {
-      console.log(error);
-    })
   }
 
   componentDidMount() {
