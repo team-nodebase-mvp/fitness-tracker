@@ -42,8 +42,13 @@ class Form extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('clicked');
-    this.props.addExercise();
+    const userObj = {
+      email: this.props.email,
+      date: new Date(),
+      timestamp: Date.now(),
+      userHistoryObj: this.state
+    }
+    console.log('clicked', userObj);
     this.setState({
       custom: '',
       sets: '',
