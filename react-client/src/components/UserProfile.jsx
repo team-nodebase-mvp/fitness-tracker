@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
     };
 
     this.getExercises = this.getExercises.bind(this);
+    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   getExercises() {
@@ -26,6 +27,20 @@ class UserProfile extends React.Component {
       console.log(`getdatt`,data)
     })
     .catch(err => console.error(err));
+  }
+
+  deleteExercise(e) {
+    Axios.put(`/api/pull?email=${this.props.email}`, {
+      // Each exercise needs a unique identifier
+      timestamp: e.target.attributes[0].nodeValue
+    })
+    .then((response) => {
+      console.log(response);
+      this.getExercises();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   componentDidMount() {
@@ -43,7 +58,7 @@ class UserProfile extends React.Component {
           <Form email={this.props.email} getExercises={this.getExercises}/>
         </div>
         <div>
-          <List userHistory={JSON.stringify(this.state.userHistory)}/>
+          <List userHistory={JSON.stringify(this.state.userHistory)} deleteExercise={this.deleteExercise}/>
         </div>
       </div>
     )

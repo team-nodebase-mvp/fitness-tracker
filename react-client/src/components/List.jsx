@@ -25,7 +25,7 @@ const List = ( { userHistory, addExercise, deleteExercise } ) => (
         </thead>
       </table>
     </div>
-    { (JSON.parse(userHistory)).reverse().map((exercise, i) => <ListItem exercise={JSON.stringify(exercise)} key={i} />) }
+    { (JSON.parse(userHistory)).reverse().map((exercise, i) => <ListItem exercise={JSON.stringify(exercise)} key={i} deleteExercise={deleteExercise} />) }
     {/* { userHistory.map((exercise, i)=> <ListItem exercise={exercise} key={i} />)} */}
   </div>
 )

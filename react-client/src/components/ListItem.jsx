@@ -6,7 +6,7 @@ class ListItem extends React.Component {
     this.state = {
 
     }
-
+    
   }
 
   render() {
@@ -40,6 +40,7 @@ class ListItem extends React.Component {
               <td>{exercise.incline}</td>
               <td>{exercise.resistance}</td>
               <td>{exercise.laps}</td>
+              <td><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="testButton">Delete Exercise</button></td>
             </tr>
           </tbody>
         </table>
