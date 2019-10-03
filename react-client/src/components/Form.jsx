@@ -113,12 +113,12 @@ class Form extends React.Component {
         <span>
           <label>Weight: </label>
           <input name="weight" value={weight} onChange={this.handleExerciseChange} placeholder="weight" type="number"/>
+        </span>
         <span>
           <select className="weight-select" name="weightSelect" onChange={this.handleExerciseChange}>
             <option value="lbs" >lbs</option>
             <option value="kgs" >kgs</option>
           </select>
-        </span>
         </span>
       </form>;
     } else if (exerciseCategory === 'runningWalking') {
