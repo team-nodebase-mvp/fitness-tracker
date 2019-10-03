@@ -13,13 +13,10 @@ class ListItem extends React.Component {
     console.log('exercise object parsed',JSON.parse(this.props.exercise));
     console.log('data I want',JSON.parse(this.props.exercise).sets);
     const exercise = JSON.parse(this.props.exercise);
-    
+    console.log(exercise.sets);
 
     return (
       <div>
-        <div>
-          { exercise }
-        </div>
         <div>
         <table className="table" border="1">
           <tbody>
