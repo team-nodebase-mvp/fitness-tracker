@@ -17,7 +17,7 @@ const postUserInfo = (userObj) => {
 
 // Update
 const updateUserInfo = (userId, data) => {
-    return User.findOneAndUpdate({ 'email':  userId }, { $push: { userHistory: data } });
+    return User.update({ 'email':  userId }, { $push: { userHistory: data } });
 }
 
 const removeUserInfo = (userId, data) => {

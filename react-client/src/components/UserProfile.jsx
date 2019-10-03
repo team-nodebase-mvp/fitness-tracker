@@ -1,7 +1,7 @@
 import React from 'react';
 import List from './List.jsx';
 import Form from './Form.jsx';
-import axios from 'axios';
+import Axios from 'axios';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -12,48 +12,21 @@ class UserProfile extends React.Component {
     };
 
     this.getExercises = this.getExercises.bind(this);
-    this.addExercise = this.addExercise.bind(this);
     this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   getExercises() {
-    axios
-    .get('/user')
-    .then(() => {
+    const userObj = {
+      email: this.props.email,
+    }
+    Axios.get('/api/user', {params:userObj})
+    .then((data) => {
       this.setState({
-        userHistory: userHistory.data
-      }, () => console.log(userHistory.data));
+        userHistory: data.data.userHistory
+      })
+      console.log(`getdatt`,data)
     })
     .catch(err => console.error(err));
-  }
-
-  addExercise() {
-    // Make email dynamic (grab from state)
-    axios.put(`/api/user?email=node@nodebase.com`, {
-      // Make object dynamic (grab from state)
-      exerciseCategory: 'weightLifting',
-      custom: 'benchPress',
-      sets: '5',
-      reps: '8',
-      weight: '100',
-      time: null,
-      distance: null,
-      speed: null,
-      incline: null,
-      resistance: null,
-      laps: null,
-      weightSelect: 'lbs',
-      distanceSelect: 'miles',
-      timeSelect: 'minutes',
-      speedSelect: 'mph'
-    })
-    .then((response) => {
-      console.log(response);
-      this.getExercises();
-    })
-    .catch((error) => {
-      console.log(error);
-    })
   }
 
   deleteExercise() {
@@ -79,14 +52,10 @@ class UserProfile extends React.Component {
       <div>
         {this.props.userAlert}
         <div>
-          <Form email={this.props.email}/>
+          <Form email={this.props.email} getExercises={this.getExercises}/>
         </div>
         <div>
-          <List 
-          userHistory={this.state.userHistory}
-          addExercise={this.addExercise}
-          deleteExercise={this.deleteExercise}
-          />
+          <List userHistory={JSON.stringify(this.state.userHistory)}/>
         </div>
       </div>
     )
