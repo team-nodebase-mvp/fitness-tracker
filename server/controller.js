@@ -14,7 +14,7 @@ const authController = (req, res) => {
     .catch((error) => res.status(400).send(error))
 }
 
-const getController = (req, res) => {
+const getController = (req, res) => { //gets exercise for user
     let { email, password } = req.query;
     getUserInfo(email)
     .then((response) => res.status(200).send(response))

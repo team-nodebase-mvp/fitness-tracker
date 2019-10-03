@@ -26,6 +26,7 @@ class Form extends React.Component {
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleExerciseChange = this.handleExerciseChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleCategoryChange(event) {
@@ -69,32 +70,28 @@ class Form extends React.Component {
 
     Axios.put('/api/user', {params:userObj})
       .then((data) => {
-        console.log(`added the data: ${JSON.stringify(data)}`)
-        // this.setState({
-        //   page: 'userprofile',
-        //   email: email,
-        //   userAlert: `Welcome ${email}!`
-        // }, () => console.log(`post success`, data.data))
+        
       },()=>console.log('clicked', userObj))
+      .then(() => {
+        this.props.getExercises();
+      })
       .catch((err) => {
         this.setState({
           page: 'userprofile',
           userAlert: `Could not save user data!`
         }, () => form.reset())
       })
-    // console.log('clicked', userObj);
-    // this.setState({
-    //   custom: '',
-    //   sets: '',
-    //   reps: '',
-    //   weight: '',
-    //   time: '',
-    //   distance: '',
-    //   speed: '',
-    //   incline: '',
-    //   resistance: '',
-    //   laps: ''
-    // })
+  }
+
+  getExercises() {
+    axios
+    .get('/user')
+    .then(() => {
+      this.setState({
+        userHistory: userHistory.data
+      }, () => console.log(userHistory.data));
+    })
+    .catch(err => console.error(err));
   }
 
   render() {

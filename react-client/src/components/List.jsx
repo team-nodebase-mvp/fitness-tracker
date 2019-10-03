@@ -4,8 +4,9 @@ import ListItem from './ListItem.jsx';
 const List = ( { userHistory } ) => (
   <div>
     <h3> Exercises </h3>
-    You've done { userHistory.length } exercises in the last 30 days.
-    { userHistory.map((exercise, i)=> <ListItem exercise={exercise} key={i} />)}
+    You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.
+    { (JSON.parse(userHistory)).map((exercise, i) => <ListItem exercise={JSON.stringify(exercise)} key={i} />) }
+    {/* { userHistory.map((exercise, i)=> <ListItem exercise={exercise} key={i} />)} */}
   </div>
 )
 
