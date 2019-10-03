@@ -57,8 +57,6 @@ class UserProfile extends React.Component {
         <div>
           <List userHistory={JSON.stringify(this.state.userHistory)}/>
         </div>
-        <button type="button" onClick={this.addExercise}>THIS BUTTON ADDS AN EXERCISE</button>
-        <button type="button" onClick={this.deleteExercise}>THIS BUTTON REMOVES AN EXERCISE</button>
       </div>
     )
   }
