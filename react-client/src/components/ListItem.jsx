@@ -10,19 +10,24 @@ class ListItem extends React.Component {
   }
 
   render() {
-    // console.log('exercise object parsed',JSON.parse(this.props.exercise));
-    // console.log('data I want',JSON.parse(this.props.exercise).sets);
-    const exercise = JSON.parse(this.props.exercise);
-    console.log(exercise.date);
-    
-    // exercise.date = Date.parse(exercise.date);
+
+    const date = new Date(exercise.date);
+
+    const formattedDate = date.toLocaleDateString('en-US', { //short, long, 2-digit, numeric
+      month: '2-digit', //long, short, 2-digit
+      day: '2-digit',
+      year: 'numeric', //numeric
+      hour: '2-digit',
+      timeZone: 'America/Los_Angeles' // 6 hours behind UTC
+    });
+
     return (
       <div>
         <div>
         <table className="table" border="1">
           <tbody>
             <tr>
-              <td>{exercise.date}</td>
+              <td>{formattedDate}</td>
               <td>{exercise.exerciseCategory}</td>
               <td>{exercise.custom}</td>
               <td>{exercise.sets}</td>

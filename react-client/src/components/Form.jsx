@@ -26,7 +26,7 @@ class Form extends React.Component {
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleExerciseChange = this.handleExerciseChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   handleCategoryChange(event) {
@@ -82,6 +82,20 @@ class Form extends React.Component {
           userAlert: `Could not save user data!`
         }, () => form.reset())
       })
+  }
+
+  deleteExercise() {
+    axios.put(`/api/pull?email=${this.props.email}`, {
+      // Each exercise needs a unique identifier
+      timestamp: ''
+    })
+    .then((response) => {
+      console.log(response);
+      this.getExercises();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   getExercises() {
@@ -247,7 +261,7 @@ class Form extends React.Component {
         <h3>Add an Exercise!</h3>
         <div className="dropdown">
           <select className="exercise-select" name="exerciseSelect" onChange={this.handleCategoryChange}>
-            <option value=""  >--Please choose an exercise--</option>
+            <option value="">--Please choose an exercise--</option>
             <option value="weightLifting" >Weight-Lifting</option>
             <option value="runningWalking" >Running/Walking</option>
             <option value="cycling" >Cycling</option>

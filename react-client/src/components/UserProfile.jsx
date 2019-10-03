@@ -12,7 +12,6 @@ class UserProfile extends React.Component {
     };
 
     this.getExercises = this.getExercises.bind(this);
-    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   getExercises() {
@@ -29,20 +28,6 @@ class UserProfile extends React.Component {
     .catch(err => console.error(err));
   }
 
-  deleteExercise() {
-    axios.put(`/api/pull?email=node@nodebase.com`, {
-      // Each exercise needs a unique identifier
-      exerciseCategory: 'weightLifting'
-    })
-    .then((response) => {
-      console.log(response);
-      this.getExercises();
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
-
   componentDidMount() {
     this.getExercises();
   }
@@ -50,6 +35,9 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <button onClick={(e) => this.props.logoutHandler(e)}>Logout</button>
+        </div>
         {this.props.userAlert}
         <div>
           <Form email={this.props.email} getExercises={this.getExercises}/>

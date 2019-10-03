@@ -18,6 +18,7 @@ class App extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
     this.registerHandler = this.registerHandler.bind(this);
+    this.logoutHandler = this.logoutHandler.bind(this);
   }
 
   componentDidMount() {
@@ -70,6 +71,14 @@ class App extends React.Component {
     // })
   }
 
+  logoutHandler(e) {
+    e.preventDefault();
+    this.setState({
+      page: 'login',
+      userAlert: `You are now logged out!`
+    })
+  }
+
   registerHandler(e) {
     e.preventDefault();
     const email = e.target.getAttribute('email');
@@ -104,7 +113,7 @@ class App extends React.Component {
       case 'homepage':
         return (<div><Homepage clickHandler={this.clickHandler}/></div>);
       case 'userprofile':
-        return (<div><UserProfile userAlert={this.state.userAlert} email={this.state.email}/></div>);
+        return (<div><UserProfile userAlert={this.state.userAlert} email={this.state.email}logoutHandler={this.logoutHandler}/></div>);
       case 'login':
         return (<div><Login loginHandler={this.loginHandler} email={this.state.email}/></div>);
       case 'register':
