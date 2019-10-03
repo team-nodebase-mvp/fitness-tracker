@@ -7,20 +7,22 @@ const List = ( { userHistory, addExercise, deleteExercise } ) => (
     You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.
     <div>
       <table className="table" border="1">
-        <tr>
-          <th>Date</th>
-          <th>Exercise Category</th>
-          <th>Custom</th>
-          <th>Sets</th>
-          <th>Reps</th>
-          <th>Weight</th>
-          <th>Time</th>
-          <th>Distance</th>
-          <th>Speed</th>
-          <th>Incline</th>
-          <th>Resistance</th>
-          <th>Laps</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Exercise Category</th>
+            <th>Custom</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>Time</th>
+            <th>Distance</th>
+            <th>Speed</th>
+            <th>Incline</th>
+            <th>Resistance</th>
+            <th>Laps</th>
+          </tr>
+        </thead>
       </table>
     </div>
     { (JSON.parse(userHistory)).map((exercise, i) => <ListItem exercise={JSON.stringify(exercise)} key={i} />) }
