@@ -10,7 +10,8 @@ class ListItem extends React.Component {
   }
 
   render() {
-
+    const exercise = JSON.parse(this.props.exercise);
+    console.log(exercise)
     const date = new Date(exercise.date);
 
     const formattedDate = date.toLocaleDateString('en-US', { //short, long, 2-digit, numeric
