@@ -15,14 +15,7 @@ class ListItem extends React.Component {
     const exercise = JSON.parse(this.props.exercise);
     console.log(exercise.date);
     
-    const convertDate = (date) => {
-      if (Number(date.toString().slice(16, 18)) < 12) {
-        return date.toString().slice(0, 10) + ',' + date.toString().slice(10, 21) + 'am';
-      }
-      return date.toString().slice(0, 10) + ',' + date.toString().slice(10, 21) + 'pm';
-    }
-    exercise.date = Date.parse(exercise.date);
-    console.log('type of date',typeof exercise.date)
+    // exercise.date = Date.parse(exercise.date);
     return (
       <div>
         <div>

@@ -42,13 +42,14 @@ class Form extends React.Component {
     });
   }
 
+  
   handleSubmit(event) {
     event.preventDefault();
     const s = this.state;
     const userObj = {
       email: this.props.email,
       userHistoryObj: {
-        date: new Date(),
+        date: convertDate(new Date()),
         timestamp: Date.now(),
         exerciseCategory: s.exerciseCategory,
         custom: s.custom,
