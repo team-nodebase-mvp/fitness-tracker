@@ -44,7 +44,7 @@ class App extends React.Component {
     }
     Axios.get('/api/user', {params:userObj})
       .then((data) => {
-        if(data.password === password){
+        if(data.data.password === password){
           this.setState({
             page: 'userprofile',
             email: email,
