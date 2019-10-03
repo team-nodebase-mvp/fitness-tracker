@@ -18,24 +18,24 @@ class ListItem extends React.Component {
     return (
       <div>
         <div>
-          { this.props.exercise }
+          { exercise }
         </div>
         <div>
         <table className="table" border="1">
           <tbody>
             <tr>
-              <td>exercise.date</td>
-              <td>Row:1 Cell:2</td>
-              <td>Row:1 Cell:3</td>
-              <td>Row:1 Cell:4</td>
-              <td>Row:1 Cell:5</td>
-              <td>Row:1 Cell:6</td>
-              <td>Row:1 Cell:7</td>
-              <td>Row:1 Cell:1</td>
-              <td>Row:1 Cell:1</td>
-              <td>Row:1 Cell:1</td>
-              <td>Row:1 Cell:1</td>
-              <td>Row:1 Cell:1</td>
+              <td>{exercise.date}</td>
+              <td>{exercise.exerciseCategory}</td>
+              <td>{exercise.custom}</td>
+              <td>{exercise.sets}</td>
+              <td>{exercise.reps}</td>
+              <td>{exercise.weight} {exercise.weightSelect}</td>
+              <td>{exercise.time} {exercise.timeSelect}</td>
+              <td>{exercise.distance} {exercise.distanceSelect}</td>
+              <td>{exercise.speed} {exercise.speedSelect}</td>
+              <td>{exercise.incline}</td>
+              <td>{exercise.resistance}</td>
+              <td>{exercise.laps}</td>
             </tr>
           </tbody>
         </table>
