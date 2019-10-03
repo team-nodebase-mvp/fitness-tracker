@@ -26,7 +26,6 @@ class Form extends React.Component {
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleExerciseChange = this.handleExerciseChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.deleteExercise = this.deleteExercise.bind(this);
   }
 
   handleCategoryChange(event) {
@@ -82,20 +81,6 @@ class Form extends React.Component {
           userAlert: `Could not save user data!`
         }, () => form.reset())
       })
-  }
-
-  deleteExercise() {
-    axios.put(`/api/pull?email=${this.props.email}`, {
-      // Each exercise needs a unique identifier
-      timestamp: ''
-    })
-    .then((response) => {
-      console.log(response);
-      this.getExercises();
-    })
-    .catch((error) => {
-      console.log(error);
-    })
   }
 
   getExercises() {
