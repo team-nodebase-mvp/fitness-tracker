@@ -124,8 +124,6 @@ class Form extends React.Component {
             <option value="kgs" >kgs</option>
           </select>
         </div>
-        {/* <span>
-        </span> */}
       </form>;
     } else if (exerciseCategory === 'runningWalking') {
       metrics=
