@@ -52,7 +52,7 @@ class ListItem extends React.Component {
         <table className="table-body" border="1">
           <tbody>
             <tr>
-              <td width="10%"><div>{formattedDate}</div><div><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="testButton">Delete Exercise</button></div></td>
+              <td width="10%"><div>{formattedDate}</div><div><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="butn">Delete Exercise</button></div></td>
               <td width="10%">{exercise.exerciseCategory}</td>
               <td width="30%">{exercise.custom}</td>
               <td width="5%">{exercise.sets}</td>

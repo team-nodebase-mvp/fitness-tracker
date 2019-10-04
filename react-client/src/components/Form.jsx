@@ -228,7 +228,7 @@ class Form extends React.Component {
     }
 
     return (
-      <div>
+      <div className="form">
         <h3>Add an Exercise!</h3>
         <div className="dropdown">
           <select className="exercise-select" name="exerciseSelect" onChange={this.handleCategoryChange}>
@@ -239,19 +239,19 @@ class Form extends React.Component {
             <option value="swimming" >Swimming</option>
           </select>
         </div>
-        <div>
+        <div className="custom-container">
           <form className="form">
             <div id="custom">
               <label>Custom: </label>
-              <input name="custom" value={custom} onChange={this.handleExerciseChange} placeholder="type of exercise, etc." type="text" maxlength="30"/>
+              <input className="custom" name="custom" value={custom} onChange={this.handleExerciseChange} placeholder="type of exercise, etc." type="text" maxlength="30"/>
             </div>
           </form>
         </div>
         <div className="metrics">
         {metrics}
         </div>
-        <div>
-          <button className="add-button" onClick={this.handleSubmit} type="button">
+        <div className="add-exercise-button">
+          <button className="butn" onClick={this.handleSubmit} type="button">
             Add Exercise
           </button>
         </div>

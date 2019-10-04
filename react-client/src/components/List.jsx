@@ -11,8 +11,8 @@ import ListItem from './ListItem.jsx';
 
 const List = ( { userHistory, addExercise, deleteExercise } ) => (
 
-  <div>
-    <h3> Exercises </h3>
+  <div className="list">
+    <h3> Your Exercises </h3>
     
     You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.
     {/* {message} */}
