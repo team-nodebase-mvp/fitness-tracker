@@ -38,9 +38,22 @@ class ListItem extends React.Component {
     return (
       <div>
         <table className="table" border="1">
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
           <tbody>
             <tr>
-              <td>{formattedDate}</td>
+              <td><div>{formattedDate}</div><div><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="testButton">Delete Exercise</button></div></td>
               <td>{exercise.exerciseCategory}</td>
               <td>{exercise.custom}</td>
               <td>{exercise.sets}</td>
@@ -52,7 +65,7 @@ class ListItem extends React.Component {
               <td>{exercise.incline}</td>
               <td>{exercise.resistance}</td>
               <td>{exercise.laps}</td>
-              <td><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="testButton">Delete Exercise</button></td>
+              <td></td>
             </tr>
           </tbody>
         </table>

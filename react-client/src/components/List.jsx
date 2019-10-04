@@ -21,6 +21,18 @@ const List = ( { userHistory, addExercise, deleteExercise } ) => (
     <div style={tableStyle}>
       <div>
         <table className="table" border="1">
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
+          <col width="150" />
           <thead>
             <tr>
               <th>Date</th>
