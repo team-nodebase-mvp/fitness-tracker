@@ -26,11 +26,13 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 	
-	tr { border: 1px solid #ccc; }
+	tr { border-bottom: 1px solid #ccc; }
 	
 	td { 
 		/* Behave  like a "row" */
-		border: none;
+    /* border: 1px solid red; */
+    border: none;
+    width: 55%;
     border-bottom: 1px solid #ccc; 
     min-height: 20px;
 		position: relative;
