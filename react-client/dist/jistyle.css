@@ -26,6 +26,12 @@ body {
     font-weight: 150;
     text-shadow: 0px 16px 18px rgba(150, 150, 150, 1);
 }
+
+.medium-font {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
 .label-font {
     color: #FFFFFF;
     font-size: 10px;
@@ -118,24 +124,20 @@ body {
 .item1 { grid-area: title; width: 100%}
 .item2 { grid-area: alert; width: 100%}
 .item3 { grid-area: username_label; width: 100%}
-.item4 { grid-area: username_input; width: 100%}
+.item4 { grid-area: username_input; width: 99.5%}
 .item5 { grid-area: password_label; width: 100%}
-.item6 { grid-area: password_input; width: 100%}
+.item6 { grid-area: password_input; width: 99.5%}
 .item7 { grid-area: confirm_label; width: 100%}
-.item8 { grid-area: confirm_input; width: 100%}
-.item9 { 
-  grid-area: register; 
-  width: 100%
-}
-.item10 { 
-  grid-area: spacer2; 
-  width: 100%
-}
+.item8 { grid-area: confirm_input; width: 99.5%}
+.item9 { grid-area: register; width: 100%}
+.item10 { grid-area: spacer2; width: 100%}
+.item11 { grid-area: row_spacer: width:100%}
 @media only screen and (max-width: 600px) {
   .grid-container {
     display: grid;
     grid-template-areas:
       'spacer title title title title spacer2'
+      'spacer row_spacer row_spacer row_spacer row_spacer spacer2'
       'spacer alert alert alert alert spacer2'
       'spacer username_label username_label username_label username_label spacer2'
       'spacer username_input username_input username_input username_input spacer2'
@@ -153,6 +155,7 @@ body {
   display: grid;
   grid-template-areas:
     'spacer title title title title spacer2'
+    'spacer row_spacer row_spacer row_spacer row_spacer spacer2'
     'spacer alert alert alert alert spacer2'
     'spacer username_label username_label username_label username_label spacer2'
     'spacer username_input username_input username_input username_input spacer2'
@@ -162,16 +165,6 @@ body {
     'spacer confirm_input confirm_input confirm_input confirm_input spacer2'
     'spacer register register register register spacer2'
     ;
-  /* grid-gap: 10px; */
-  /* background-color: #2196F3; */
-  /* padding: 10px; */
+
 }
 
-.grid-container > div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* text-align: center; */
-  border: 1px dotted #203F22;
-  /* padding: 2px 0; */
-  font-size: 14px;
-}
- 
