@@ -234,7 +234,7 @@ class Form extends React.Component {
           <select className="exercise-select" name="exerciseSelect" onChange={this.handleCategoryChange}>
             <option value="">--Please choose an exercise--</option>
             <option value="weightLifting" >Weight-Lifting</option>
-            <option value="runningWalking" >Running/Walking</option>
+            <option value="runningWalking" >Running & Walking</option>
             <option value="cycling" >Cycling</option>
             <option value="swimming" >Swimming</option>
           </select>
