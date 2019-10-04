@@ -539,6 +539,10 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1febf68bdf90daa35e045230b64ea95b43e2b31
 /***/ "./react-client/dist/dumbbell-light.png":
 /*!**********************************************!*\
   !*** ./react-client/dist/dumbbell-light.png ***!
@@ -550,6 +554,11 @@ eval("module.exports = __webpack_require__.p + \"4320124626d9ae6b15a9e6a24d4a4e5
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6d26058fe98411d518e1564005517addfebb5ff5
+>>>>>>> c1febf68bdf90daa35e045230b64ea95b43e2b31
 /***/ "./react-client/src/components/Form.jsx":
 /*!**********************************************!*\
   !*** ./react-client/src/components/Form.jsx ***!
