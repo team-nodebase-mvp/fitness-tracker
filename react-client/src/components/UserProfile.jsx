@@ -49,7 +49,7 @@ class UserProfile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div>
           <button onClick={(e) => this.props.logoutHandler(e)}>Logout</button>
         </div>

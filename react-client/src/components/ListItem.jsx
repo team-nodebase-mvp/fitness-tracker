@@ -36,7 +36,7 @@ class ListItem extends React.Component {
      }
 
     return (
-      <div>
+      <div className="content">
         <table className="table" border="1">
           <col width="150" />
           <col width="150" />
