@@ -14,7 +14,7 @@ const List = ( { userHistory, addExercise, deleteExercise } ) => (
   <div className="list">
     <h3> Your Exercises </h3>
     
-    You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.
+    <h5>You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.</h5>
     {/* {message} */}
     <div className="table-container">
         <table className="table-header" border="1">
