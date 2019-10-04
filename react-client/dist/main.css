@@ -5099,6 +5099,7 @@ fieldset[disabled] .select select:hover {
   display: block;
   font-size: 1rem;
   font-weight: 700;
+  padding-left: 10px;
 }
 
 .label:not(:last-child) {
