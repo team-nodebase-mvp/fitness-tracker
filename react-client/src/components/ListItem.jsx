@@ -23,19 +23,15 @@ class ListItem extends React.Component {
     });
 
     if (exercise.weight === null) {
-      console.log('weight is not filled in');
       exercise.weightSelect = '';
     } 
     if (exercise.time === null) {
-      console.log('time is not filled in');
       exercise.timeSelect = '';
     }
      if (exercise.distance === null) {
-       console.log('distance is not filled in');
        exercise.distanceSelect = '';
      }
      if (exercise.speed === null) {
-       console.log('speed is not filled in');
        exercise.speedSelect = '';
      }
 
