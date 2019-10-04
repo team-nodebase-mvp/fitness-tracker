@@ -1,0 +1,11 @@
+.table-container {
+  overflow-x: auto;
+  overflow-y: scroll;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
