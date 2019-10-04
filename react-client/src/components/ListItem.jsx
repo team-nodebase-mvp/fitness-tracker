@@ -35,31 +35,33 @@ class ListItem extends React.Component {
        exercise.speedSelect = '';
      }
 
+    const tableStyle = {
+      overflow: 'auto'
+    };
+
     return (
     
       <div>
-        <div>
-        <table className="table" border="1">
-          <tbody>
-            <tr>
-              <td>{formattedDate}</td>
-              <td>{exercise.exerciseCategory}</td>
-              <td>{exercise.custom}</td>
-              <td>{exercise.sets}</td>
-              <td>{exercise.reps}</td>
-              <td>
-              {exercise.weight} {exercise.weightSelect}
-              </td>
-              <td>{exercise.time} {exercise.timeSelect}</td>
-              <td>{exercise.distance} {exercise.distanceSelect}</td>
-              <td>{exercise.speed} {exercise.speedSelect}</td>
-              <td>{exercise.incline}</td>
-              <td>{exercise.resistance}</td>
-              <td>{exercise.laps}</td>
-              <td><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="testButton">Delete Exercise</button></td>
-            </tr>
-          </tbody>
-        </table>
+        <div style={tableStyle}>
+          <table className="table" border="1">
+            <tbody>
+              <tr>
+                <td>{formattedDate}</td>
+                <td>{exercise.exerciseCategory}</td>
+                <td>{exercise.custom}</td>
+                <td>{exercise.sets}</td>
+                <td>{exercise.reps}</td>
+                <td>{exercise.weight} {exercise.weightSelect}</td>
+                <td>{exercise.time} {exercise.timeSelect}</td>
+                <td>{exercise.distance} {exercise.distanceSelect}</td>
+                <td>{exercise.speed} {exercise.speedSelect}</td>
+                <td>{exercise.incline}</td>
+                <td>{exercise.resistance}</td>
+                <td>{exercise.laps}</td>
+                <td><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="testButton">Delete Exercise</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div> 
       </div>
     )

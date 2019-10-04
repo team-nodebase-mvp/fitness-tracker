@@ -1,11 +1,15 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
 
+const tableStyle = {
+  overflow: 'auto'
+};
+
 const List = ( { userHistory, addExercise, deleteExercise } ) => (
   <div>
     <h3> Exercises </h3>
     You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.
-    <div>
+    <div style={tableStyle}>
       <table className="table" border="1">
         <thead>
           <tr>
