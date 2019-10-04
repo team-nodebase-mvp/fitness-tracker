@@ -1,11 +1,16 @@
 #homepage {
-    background: #201f29
+    background: #FFFFFF
 }
-
+#spacer-big {
+    height: 200px
+}
+#spacer-small {
+    height: 10px
+}
 .main-font {
     color: #52f7d3;
 }
-
 .button {
     width: 70px
 }
+
