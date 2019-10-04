@@ -2,7 +2,7 @@ import React from 'react';
 import dumbbellicon from "../../dist/dumbbell-light.png";
 
 const Homepage = (props) => (
-  <div id="homepage" className="page is-size-7-mobile is-size-7-tablet has-text-centered">
+  <div id="homepage" className="page has-text-centered">
       <div id="spacer-big"></div>
       <div id="dumbbellicon"><img src={dumbbellicon} width={250}/></div>
       <div id="spacer-medium"></div>
