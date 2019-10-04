@@ -36,9 +36,7 @@ class ListItem extends React.Component {
      }
 
     return (
-    
       <div>
-        <div>
         <table className="table" border="1">
           <tbody>
             <tr>
@@ -47,9 +45,7 @@ class ListItem extends React.Component {
               <td>{exercise.custom}</td>
               <td>{exercise.sets}</td>
               <td>{exercise.reps}</td>
-              <td>
-              {exercise.weight} {exercise.weightSelect}
-              </td>
+              <td>{exercise.weight} {exercise.weightSelect}</td>
               <td>{exercise.time} {exercise.timeSelect}</td>
               <td>{exercise.distance} {exercise.distanceSelect}</td>
               <td>{exercise.speed} {exercise.speedSelect}</td>
@@ -60,8 +56,8 @@ class ListItem extends React.Component {
             </tr>
           </tbody>
         </table>
-        </div> 
-      </div>
+      </div> 
+        
     )
 
   }
