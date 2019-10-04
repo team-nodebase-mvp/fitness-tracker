@@ -544,9 +544,9 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   !*** ./react-client/dist/dumbbell-light.png ***!
   \**********************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWFjdC1jbGllbnQvZGlzdC9kdW1iYmVsbC1saWdodC5wbmcuanMiLCJzb3VyY2VzIjpbXSwibWFwcGluZ3MiOiIiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./react-client/dist/dumbbell-light.png\n");
+eval("module.exports = __webpack_require__.p + \"4320124626d9ae6b15a9e6a24d4a4e5b.png\";//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWFjdC1jbGllbnQvZGlzdC9kdW1iYmVsbC1saWdodC5wbmcuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWFjdC1jbGllbnQvZGlzdC9kdW1iYmVsbC1saWdodC5wbmc/MWNjYSJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IF9fd2VicGFja19wdWJsaWNfcGF0aF9fICsgXCI0MzIwMTI0NjI2ZDlhZTZiMTVhOWU2YTI0ZDRhNGU1Yi5wbmdcIjsiXSwibWFwcGluZ3MiOiJBQUFBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./react-client/dist/dumbbell-light.png\n");
 
 /***/ }),
 
