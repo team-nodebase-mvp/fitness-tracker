@@ -49,11 +49,13 @@ class UserProfile extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="user-profile">
         <div>
-          <button onClick={(e) => this.props.logoutHandler(e)}>Logout</button>
+          <span><button className="butn" className="logout" onClick={(e) => this.props.logoutHandler(e)}>Logout</button></span>
+          <span>{this.props.userAlert}</span>
+          
         </div>
-        {this.props.userAlert}
+        
         <div>
           <Form email={this.props.email} getExercises={this.getExercises}/>
         </div>
