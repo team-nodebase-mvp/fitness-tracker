@@ -75,12 +75,18 @@ class Form extends React.Component {
       .then(() => {
         this.props.getExercises();
       })
-      .catch((err) => {
-        this.setState({
-          page: 'userprofile',
-          userAlert: `Could not save user data!`
-        }, () => form.reset())
-      })
+      this.setState({
+        custom: '',
+        sets: '',
+        reps: '',
+        weight: '',
+        time: '',
+        distance: '',
+        speed: '',
+        incline: '',
+        resistance: '',
+        laps: ''
+      });
   }
 
   getExercises() {
