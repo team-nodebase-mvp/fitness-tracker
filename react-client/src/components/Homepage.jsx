@@ -5,7 +5,9 @@ const Homepage = (props) => (
   <div id="homepage" className="page is-size-7-mobile is-size-7-tablet has-text-centered">
       <div id="spacer-big"></div>
       <div id="dumbbellicon"><img src={dumbbellicon} width={300}/></div>
+      <div id="spacer-medium"></div>
       <h1 className="title main-font" id="homepage_title">Fitness Tracker</h1>
+      <div id="spacer-medium"></div>
       <div>
         <button className="butn is-primary" value="login" onClick={(e) => props.clickHandler(e)}>Login</button>
       </div>
