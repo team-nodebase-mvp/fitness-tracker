@@ -22,7 +22,21 @@ class ListItem extends React.Component {
       timeZone: 'America/Los_Angeles' // 6 hours behind UTC
     });
 
+    if (exercise.weight === null) {
+      exercise.weightSelect = '';
+    } 
+    if (exercise.time === null) {
+      exercise.timeSelect = '';
+    }
+     if (exercise.distance === null) {
+       exercise.distanceSelect = '';
+     }
+     if (exercise.speed === null) {
+       exercise.speedSelect = '';
+     }
+
     return (
+    
       <div>
         <div>
         <table className="table" border="1">
@@ -33,7 +47,9 @@ class ListItem extends React.Component {
               <td>{exercise.custom}</td>
               <td>{exercise.sets}</td>
               <td>{exercise.reps}</td>
-              <td>{exercise.weight} {exercise.weightSelect}</td>
+              <td>
+              {exercise.weight} {exercise.weightSelect}
+              </td>
               <td>{exercise.time} {exercise.timeSelect}</td>
               <td>{exercise.distance} {exercise.distanceSelect}</td>
               <td>{exercise.speed} {exercise.speedSelect}</td>
