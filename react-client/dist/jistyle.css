@@ -21,7 +21,8 @@ button {
 }
 .loginpage {
   height: 100vh;
-  /* padding: 10px */
+  padding: 100px 0 0 0;
+  background: #cddad5
 }
 #spacer-big {
     height: 20vh
@@ -199,6 +200,8 @@ button {
       'spacer button button button button button spacer2'
       'spacer button2 button2 button2 button2 button2 spacer2'
       ;
+    margin: 0 auto;
+    width: 300px;
   }
   .grid-container-login {
     display: grid;
@@ -259,10 +262,6 @@ button {
   -webkit-box-shadow: 2px 2px 6px #666666;
   -moz-box-shadow: 2px 2px 6px #666666;
   box-shadow: 2px 2px 6px #666666;
-}
-form {
-  padding: 100px 0 0 0;
-  background: #cddad5
 }
 
 .grid-container-login{
