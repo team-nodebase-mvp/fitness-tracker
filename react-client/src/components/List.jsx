@@ -1,8 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
 
-
-
 // let message;
 // if ((JSON.parse(props.userHistory)).length === 1) {
 // message = `You've done ${ (JSON.parse(userHistory)).length } exercise in the last 30 days.`
