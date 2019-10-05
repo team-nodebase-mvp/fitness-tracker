@@ -21,18 +21,71 @@ class ListItem extends React.Component {
       timeZone: 'America/Los_Angeles' // 6 hours behind UTC
     });
 
-    if (exercise.weight === null) {
-      exercise.weightSelect = '';
-    } 
-    if (exercise.time === null) {
-      exercise.timeSelect = '';
+    const rowCollapse = {
+      display: 'none'
     }
-     if (exercise.distance === null) {
-       exercise.distanceSelect = '';
-     }
-     if (exercise.speed === null) {
-       exercise.speedSelect = '';
-     }
+
+    let custom, sets, reps, weight, time, distance, speed, incline, resistance, laps;
+
+    if (exercise.custom === "") {
+      custom = <td style={rowCollapse}>{exercise.custom}</td>;
+    } else {
+      custom = <td>{exercise.custom}</td>;
+    }
+
+    if (exercise.sets === null) {
+      sets = <td style={rowCollapse}>{exercise.sets}</td>;
+    } else {
+      sets = <td>{exercise.sets}</td>;
+    }
+
+    if (exercise.reps === null) {
+      reps = <td style={rowCollapse}>{exercise.reps}</td>;
+    } else {
+      reps = <td>{exercise.reps}</td>;
+    }
+
+    if (exercise.incline === null) {
+      incline = <td style={rowCollapse}>{exercise.incline}</td>;
+    } else {
+      incline = <td>{exercise.incline}</td>;
+    }
+
+    if (exercise.resistance === null) {
+      resistance = <td style={rowCollapse}>{exercise.resistance}</td>;
+    } else {
+      resistance = <td>{exercise.resistance}</td>;
+    }
+
+    if (exercise.laps === null) {
+      laps = <td style={rowCollapse}>{exercise.laps}</td>;
+    } else {
+      laps = <td>{exercise.laps}</td>;
+    }
+
+    if (exercise.weight === null) {
+      weight = <td style={rowCollapse}>{exercise.weight} {exercise.weightSelect}</td>;
+    } else {
+      weight = <td>{exercise.weight} {exercise.weightSelect}</td>;
+    }
+
+    if (exercise.time === null) {
+      time = <td style={rowCollapse}>{exercise.time} {exercise.timeSelect}</td>;
+    } else {
+      time = <td>{exercise.time} {exercise.timeSelect}</td>;
+    }
+
+    if (exercise.distance === null) {
+      distance = <td style={rowCollapse}>{exercise.distance} {exercise.distanceSelect}</td>;
+    } else {
+      distance = <td>{exercise.distance} {exercise.distanceSelect}</td>;
+    }
+
+    if (exercise.speed === null) {
+      speed = <td style={rowCollapse}>{exercise.speed} {exercise.speedSelect}</td>;
+    } else {
+      speed = <td>{exercise.speed} {exercise.speedSelect}</td>;
+    }
 
     if (exercise.exerciseCategory === 'weightLifting') {
       exercise.exerciseCategory = 'Weight Lifting';
@@ -52,18 +105,28 @@ class ListItem extends React.Component {
         <table className="table-body" border="1">
           <tbody>
             <tr>
-              <td width="10%"><div>{formattedDate}</div><div><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="butn">Delete Exercise</button></div></td>
-              <td width="10%">{exercise.exerciseCategory}</td>
-              <td width="30%">{exercise.custom}</td>
-              <td width="5%">{exercise.sets}</td>
-              <td width="5%">{exercise.reps}</td>
-              <td width="5%">{exercise.weight} {exercise.weightSelect}</td>
-              <td width="10%">{exercise.time} {exercise.timeSelect}</td>
-              <td width="5%">{exercise.distance} {exercise.distanceSelect}</td>
-              <td width="5%">{exercise.speed} {exercise.speedSelect}</td>
-              <td width="5%">{exercise.incline}</td>
-              <td width="5%">{exercise.resistance}</td>
-              <td width="5%">{exercise.laps}</td>
+              <td ><div>{formattedDate}</div><div><button data-timestamp={exercise.timestamp} type="button" onClick={this.props.deleteExercise} className="butn">Delete Exercise</button></div></td>
+              <td>{exercise.exerciseCategory}</td>
+              {/* <td>{exercise.custom}</td> */}
+              {custom}
+              {/* <td>{exercise.sets}</td> */}
+              {sets}
+              {/* {/* <td>{exercise.reps}</td> */}
+              {reps}
+              {/* <td>{exercise.weight} {exercise.weightSelect}</td> */}
+              {weight}
+              {/* <td>{exercise.time} {exercise.timeSelect}</td> */}
+              {time}
+              {/* <td>{exercise.distance} {exercise.distanceSelect}</td> */}
+              {distance}
+              {/* <td>{exercise.speed} {exercise.speedSelect}</td> */}
+              {speed}
+              {/* <td>{exercise.incline}</td> */}
+              {incline}
+              {/* <td>{exercise.resistance}</td> */}
+              {resistance}
+              {/* <td>{exercise.laps}</td> */}
+              {laps}
             </tr>
           </tbody>
         </table>

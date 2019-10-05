@@ -1,8 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
 
-
-
 // let message;
 // if ((JSON.parse(props.userHistory)).length === 1) {
 // message = `You've done ${ (JSON.parse(userHistory)).length } exercise in the last 30 days.`
@@ -20,18 +18,18 @@ const List = ( { userHistory, addExercise, deleteExercise } ) => (
         <table className="table-header" border="1">
           <thead>
             <tr>
-              <th width="10%">Date</th>
-               <th width="10%">Exercise Category</th>
-               <th width="30%">Custom</th>
-               <th width="5%">Sets</th>
-               <th width="5%">Reps</th>
-               <th width="5%">Weight</th>
-               <th width="10%">Time</th>
-               <th width="5%">Distance</th>
-               <th width="5%">Speed</th>
-               <th width="5%">Incline</th>
-               <th width="5%">Resistance</th>
-               <th width="5%">Laps</th>
+              <th>Date</th>
+               <th>Exercise Category</th>
+               <th>Custom</th>
+               <th>Sets</th>
+               <th>Reps</th>
+               <th>Weight</th>
+               <th>Time</th>
+               <th>Distance</th>
+               <th>Speed</th>
+               <th>Incline</th>
+               <th>Resistance</th>
+               <th>Laps</th>
             </tr>
           </thead>
         </table>
