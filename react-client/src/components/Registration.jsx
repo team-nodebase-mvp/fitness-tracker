@@ -46,6 +46,9 @@ export default class Registration extends Component{
               <button className="butn-corner is-primary item9" value="register" type="submit">Register</button>
             </div>
             {/* <div>{this.props.userAlert}</div> */}
+            <div className="item12">
+              <button className="butn-corner is-primary item12" value="homepage" onClick={(e) => this.props.backHomeHandler(e)}>Cancel</button>
+            </div>
             <div className="item10"></div>
         </div>    
       </form>

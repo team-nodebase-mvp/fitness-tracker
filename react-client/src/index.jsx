@@ -19,6 +19,7 @@ class App extends React.Component {
     this.loginHandler = this.loginHandler.bind(this);
     this.registerHandler = this.registerHandler.bind(this);
     this.logoutHandler = this.logoutHandler.bind(this);
+    this.backHomeHandler = this.backHomeHandler.bind(this);
   }
 
   componentDidMount() {
@@ -78,6 +79,12 @@ class App extends React.Component {
       userAlert: `You are now logged out!`
     })
   }
+  backHomeHandler(e) {
+    e.preventDefault();
+    this.setState({
+      page: 'homepage',
+    })
+  }
 
   registerHandler(e) {
     e.preventDefault();
@@ -115,9 +122,9 @@ class App extends React.Component {
       case 'userprofile':
         return (<div><UserProfile userAlert={this.state.userAlert} email={this.state.email}logoutHandler={this.logoutHandler}/></div>);
       case 'login':
-        return (<div><Login loginHandler={this.loginHandler} email={this.state.email}/></div>);
+        return (<div><Login loginHandler={this.loginHandler} email={this.state.email} backHomeHandler={this.backHomeHandler}/></div>);
       case 'register':
-        return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert} email={this.state.email}/></div>);
+        return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert} email={this.state.email} backHomeHandler={this.backHomeHandler}/></div>);
     }
     // return (
     // <div>

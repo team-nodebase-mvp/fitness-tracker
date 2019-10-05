@@ -39,6 +39,9 @@ export default class Login extends Component{
         <div className="item9">
               <button className="butn-corner is-primary item9" value="Login" type="submit">Login</button>
         </div>
+        <div className="item12">
+              <button className="butn-corner is-primary item12" value="homepage" onClick={(e) => this.props.backHomeHandler(e)}>Cancel</button>
+        </div>
         <div className="item10"></div>
         </div>
       </form>
