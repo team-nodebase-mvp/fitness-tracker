@@ -124,11 +124,13 @@ class Form extends React.Component {
           <div>
             <label>Weight</label>
           </div>
-          <input name="weight" value={weight} onChange={this.handleExerciseChange} placeholder="weight" type="number" maxLength="4"/>
-          <select className="weight-select" name="weightSelect" onChange={this.handleExerciseChange}>
-            <option value="lbs" >lbs</option>
-            <option value="kgs" >kgs</option>
-          </select>
+          <div className="weight">
+            <input name="weight" value={weight} onChange={this.handleExerciseChange} placeholder="weight" type="number" maxLength="4"/>
+            <select className="weight-select" name="weightSelect" onChange={this.handleExerciseChange}>
+              <option value="lbs" >lbs</option>
+              <option value="kgs" >kgs</option>
+            </select>
+          </div>
         </div>
       </form>;
     } else if (exerciseCategory === 'runningWalking') {
@@ -138,31 +140,37 @@ class Form extends React.Component {
           <div>
             <label>Time</label>
           </div>
-          <input name="time" value={time} onChange={this.handleExerciseChange} placeholder="minutes or hours" type="number" maxLength="4"/>
-          <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
-            <option value="minutes" >mins</option>
-            <option value="hours" >hrs</option>
-          </select>
-        </div>
+          <div className="time">
+            <input name="time" value={time} onChange={this.handleExerciseChange} placeholder="minutes or hours" type="number" maxLength="4"/>
+            <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
+              <option value="minutes" >mins</option>
+              <option value="hours" >hrs</option>
+            </select>
+          </div>
+          </div>
         <div>
           <div>
             <label>Distance </label>
           </div>
-          <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number" maxLength="5"/>
-          <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
-            <option value="miles" >mi</option>
-            <option value="kilometers" >km</option>
-          </select>
+          <div className="distance">
+            <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number" maxLength="5"/>
+            <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
+              <option value="miles" >mi</option>
+              <option value="kilometers" >km</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
             <label>Speed</label>
           </div>
-          <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number" maxLength="2"/>
-          <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
-            <option value="mph" >mph</option>
-            <option value="kmph" >kmph</option>
-          </select>
+          <div className="speed">
+            <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number" maxLength="2"/>
+            <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
+              <option value="mph" >mph</option>
+              <option value="kmph" >kmph</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
@@ -184,31 +192,37 @@ class Form extends React.Component {
           <div>
             <label>Time</label>
           </div>
-          <input name="time" value={time} placeholder="minutes or hours" onChange={this.handleExerciseChange} type="number" maxLength="4"/>
-          <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
-            <option value="minutes" >mins</option>
-            <option value="hours" >hrs</option>
-          </select>
+          <div className="time">
+            <input name="time" value={time} placeholder="minutes or hours" onChange={this.handleExerciseChange} type="number" maxLength="4"/>
+            <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
+              <option value="minutes" >mins</option>
+              <option value="hours" >hrs</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
             <label>Distance</label>
           </div>
-          <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number" maxLength="5"/>
-          <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
-            <option value="miles" >mi</option>
-            <option value="kilometers" >km</option>
-          </select>
+          <div className="distance">
+            <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number" maxLength="5"/>
+            <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
+              <option value="miles" >mi</option>
+              <option value="kilometers" >km</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
             <label>Speed</label>
           </div>
-          <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number" maxLength="2"/>
-          <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
-            <option value="mph" >mph</option>
-            <option value="kmph" >km/h</option>
-          </select>
+          <div className="speed">
+            <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number" maxLength="2"/>
+            <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
+              <option value="mph" >mph</option>
+              <option value="kmph" >km/h</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
@@ -224,11 +238,13 @@ class Form extends React.Component {
           <div>
             <label>Time</label>
           </div>
-          <input name="time" value={time} placeholder="minutes or hours" onChange={this.handleExerciseChange} type="number" maxLength="4"/>
-          <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
-            <option value="minutes" >mins</option>
-            <option value="hours" >hrs</option>
-          </select>
+          <div className="time">
+            <input name="time" value={time} placeholder="minutes or hours" onChange={this.handleExerciseChange} type="number" maxLength="4"/>
+            <select className="time-select" name="timeSelect" onChange={this.handleExerciseChange}>
+              <option value="minutes" >mins</option>
+              <option value="hours" >hrs</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
@@ -240,21 +256,25 @@ class Form extends React.Component {
           <div>
             <label>Distance</label>
           </div>
-          <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number" maxLength="5"/>
-          <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
-            <option value="miles" >mi</option>
-            <option value="kilometers" >km</option>
-          </select>
+          <div className="distance">
+            <input name="distance" value={distance} placeholder="miles or kilometers" onChange={this.handleExerciseChange} type="number" maxLength="5"/>
+            <select className="distance-select" name="distanceSelect" onChange={this.handleExerciseChange}>
+              <option value="miles" >mi</option>
+              <option value="kilometers" >km</option>
+            </select>
+          </div>
         </div>
         <div>
           <div>
             <label>Speed</label>
           </div>
-          <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number" maxLength="2"/>
-          <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
-            <option value="mph" >mph</option>
-            <option value="kmph" >km/h</option>
-          </select>
+          <div className="speed">
+            <input name="speed" value={speed} placeholder="mph or kmph" onChange={this.handleExerciseChange} type="number" maxLength="2"/>
+            <select className="speed-select" name="speedSelect" onChange={this.handleExerciseChange}>
+              <option value="mph" >mph</option>
+              <option value="kmph" >km/h</option>
+            </select>
+          </div>
         </div>
       </form>;
     }
