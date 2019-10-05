@@ -22,7 +22,7 @@ export default class Login extends Component{
     const { email, password } = this.state;
     return(
       <React.Fragment>
-      <form className="page" email={ email } password={ password } onSubmit={(e) => this.props.loginHandler(e)}>
+      <form className="loginpage" email={ email } password={ password } onSubmit={(e) => this.props.loginHandler(e)}>
         <div className="grid-container-login">
         <div className="item0"></div>
         <div className="item1 main-font">
