@@ -18,17 +18,7 @@ export default class Login extends Component{
       [type]: value
     })
   }
-
-  componentDidMount() {
-    const form = document.getElementsByTagName('form')[0];
-    // this.resetForm(form);
-    // form.reset()
-    // if(form){ console.log(`form exists`); form.reset() }
-    // else {console.log(`doesnt exist`)}
-  //  console.log(form.getAttribute("email"))
-
-  }
-
+ 
 
   render() {
     const { email, password } = this.state;
