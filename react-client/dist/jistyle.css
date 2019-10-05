@@ -170,7 +170,7 @@ button {
   height: 35px;
   padding: 0px;
   }
-.item9 { grid-area: register; width: 100%}
+.item9 { grid-area: button; width: 100%}
 .item10 { grid-area: spacer2; width: 100%}
 .item11 { grid-area: row_spacer: width:100%}
 @media only screen and (max-width: 600px) {
@@ -186,7 +186,20 @@ button {
       'spacer password_input password_input password_input password_input password_input spacer2'
       'spacer confirm_label confirm_label confirm_label confirm_label confirm_label spacer2'
       'spacer confirm_input confirm_input confirm_input confirm_input confirm_input spacer2'
-      'spacer register register register register register spacer2'
+      'spacer button button button button button spacer2'
+      ;
+  }
+  .grid-container-login {
+    display: grid;
+    grid-template-areas:
+      'title title title title title title title'
+      'spacer row_spacer row_spacer row_spacer row_spacer row_spacer spacer2'
+      'spacer alert alert alert alert alert spacer2'
+      'spacer username_label username_label username_label username_label username_label spacer2'
+      'spacer username_input username_input username_input username_input username_input spacer2'
+      'spacer password_label password_label password_label password_label password_label spacer2'
+      'spacer password_input password_input password_input password_input password_input spacer2'
+      'spacer button button button button button spacer2'
       ;
   }
 }
@@ -204,8 +217,22 @@ button {
     'spacer spacer spacer password_input spacer2 spacer2 spacer2'
     'spacer spacer spacer confirm_label spacer2 spacer2 spacer2'
     'spacer spacer spacer confirm_input spacer2 spacer2 spacer2'
-    'spacer spacer spacer register spacer2 spacer2 spacer2'
+    'spacer spacer spacer button spacer2 spacer2 spacer2'
     ;
 
 }
 
+.grid-container-login {
+  display: grid;
+  grid-template-areas:
+    'title title title title title title title'
+    'spacer spacer spacer row_spacer spacer2 spacer2 spacer2'
+    'spacer spacer spacer alert spacer2 spacer2 spacer2'
+    'spacer spacer spacer username_label spacer2 spacer2 spacer2'
+    'spacer spacer spacer username_input spacer2 spacer2 spacer2'
+    'spacer spacer spacer password_label spacer2 spacer2 spacer2'
+    'spacer spacer spacer password_input spacer2 spacer2 spacer2'
+    'spacer spacer spacer button spacer2 spacer2 spacer2'
+    ;
+
+}
