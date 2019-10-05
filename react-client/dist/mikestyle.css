@@ -1,16 +1,58 @@
 body {
-  background:rgb(54, 157, 148);
+  background:#cddad5;
   font-family: 'Open Sans', 'Verdana', sans-serif;
 }
 
 .user-profile {
-  background:rgb(54, 157, 148);
-  margin-left: 40px;
-  color: #ffffff;
+  background:#cddad5;
+  padding: 0 40px;
+  color: #212525;
+}
+
+.exercise-form-container {
+  /* border: 2px solid blue; */
+  background: rgba(76,231,205,1);
+  background: -moz-linear-gradient(top, rgba(76,231,205,1) 0%, rgba(51,128,122,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,231,205,1)), color-stop(100%, rgba(51,128,122,1)));
+  background: -webkit-linear-gradient(top, rgba(76,231,205,1) 0%, rgba(51,128,122,1) 100%);
+  background: -o-linear-gradient(top, rgba(76,231,205,1) 0%, rgba(51,128,122,1) 100%);
+  background: -ms-linear-gradient(top, rgba(76,231,205,1) 0%, rgba(51,128,122,1) 100%);
+  background: linear-gradient(to bottom, rgba(76,231,205,1) 0%, rgba(51,128,122,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4ce7cd', endColorstr='#33807a', GradientType=0 );
+  -webkit-box-shadow: 2px 2px 0px #666666;
+  -moz-box-shadow: 2px 2px 0px #666666;
+  box-shadow: 2px 2px 0px #666666;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 20px 20px 10px 10px;
+}
+
+.add-exercise-button {
+  padding-bottom: 40px;
+  /* border: 2px solid  rgba(51,128,122,1); */
 }
 
 .logout {
   margin: 40px 40px 0 0;
+}
+
+.form h3 {
+  margin-top: 0px;
+  width: 100%;
+  height: 10vh;
+  background-color: white;
+  color: #212525;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 150;
+  text-shadow: 0px 16px 18px rgba(150, 150, 150, 1);
+  vertical-align: baseline;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: 2px 2px 0px #666666;
+  -moz-box-shadow: 2px 2px 0px #666666;
+  box-shadow: 2px 2px 0px #666666;
 }
 
 h3 {
@@ -77,15 +119,8 @@ table .butn, .logout {
   font-size: 13px;
   height: 28px;
   width: 220px;
-  margin-bottom: 20px;
+  margin: 20px 0 20px 0;
   padding-left: 20px;
-}
-
-.custom-container {
-  margin-bottom: 20px;
-}
-.custom-field {
-  margin-bottom: 20px;
 }
 
 .form input {
@@ -129,7 +164,7 @@ table .butn, .logout {
 } */
 
 table {
-  width: 86%;
+  width: 100%;
   border-collapse: collapse;
   text-align: center;
   border: 1px solid #ffffff;

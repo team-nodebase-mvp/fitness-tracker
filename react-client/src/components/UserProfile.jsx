@@ -54,8 +54,10 @@ class UserProfile extends React.Component {
           <button className="butn" className="logout" onClick={(e) => this.props.logoutHandler(e)}>Logout</button>
           <div className="welcome">{this.props.userAlert}</div>  
         </div>
-        <div>
-          <Form email={this.props.email} getExercises={this.getExercises}/>
+        <div className="exercise-form-container">
+          <div className="exercise-form">
+            <Form email={this.props.email} getExercises={this.getExercises}/>
+          </div>
         </div>
         <div>
           <List userHistory={JSON.stringify(this.state.userHistory)} deleteExercise={this.deleteExercise}/>
