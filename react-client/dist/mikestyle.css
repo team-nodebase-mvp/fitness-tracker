@@ -143,9 +143,9 @@ td {
   font-size: 14px;
 }
 
-@media 
+/* @media 
 only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+(min-device-width: 768px) and (max-device-width: 1024px)  { */
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
@@ -200,4 +200,4 @@ only screen and (max-width: 760px),
   td:nth-of-type(10):before { content: "Incline"; }
   td:nth-of-type(11):before { content: "Reistance"; }
   td:nth-of-type(12):before { content: "Laps"; }
-}
+/* } */
