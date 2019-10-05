@@ -1,12 +1,12 @@
 body {
   background:rgb(54, 157, 148);
+  font-family: 'Open Sans', 'Verdana', sans-serif;
 }
 
 .user-profile {
   background:rgb(54, 157, 148);
   margin-left: 40px;
   color: #ffffff;
-  font-family: 'Verdana', sans-serif;
 }
 
 .logout {
@@ -129,7 +129,7 @@ table .butn, .logout {
 } */
 
 table {
-  width: 90%;
+  width: 86%;
   border-collapse: collapse;
   text-align: center;
   border: 1px solid #ffffff;
@@ -170,6 +170,7 @@ only screen and (max-width: 760px),
     min-height: 20px;
 		position: relative;
     padding-left: 50%; 
+    padding-top: 7px;
     padding-bottom: 7px;
 	}
 	
@@ -177,8 +178,8 @@ only screen and (max-width: 760px),
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
+		top: 7px;
+		left: 7px;
 		width: 45%; 
 		padding-right: 10px; 
     white-space: nowrap;
