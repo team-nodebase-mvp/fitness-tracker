@@ -23,7 +23,7 @@ export default class Registration extends Component{
     const { email, password, password_two } = this.state;
     return(
       <React.Fragment>
-      <form className="page" email={ email } password={ password } password_two={ password_two } onSubmit={(e) => this.props.registerHandler(e)}>
+      <form className="loginpage" email={ email } password={ password } password_two={ password_two } onSubmit={(e) => this.props.registerHandler(e)}>
         <div className="grid-container">
             <div className="item0"></div>
             <div className="item1 main-font">
