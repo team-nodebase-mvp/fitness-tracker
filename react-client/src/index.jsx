@@ -13,7 +13,7 @@ class App extends React.Component {
       items: [],
       page: 'homepage',
       email: '',
-      userAlert: ''
+      userAlert: '',
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
