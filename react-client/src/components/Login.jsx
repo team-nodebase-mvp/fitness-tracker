@@ -9,6 +9,7 @@ export default class Login extends Component{
     }
     //bind yo functions
     this.inputHandler = this.inputHandler.bind(this);
+    // this.resetForm = this.resetForm.bind(this);
   }
   //functions here
   inputHandler(e) {
@@ -17,6 +18,17 @@ export default class Login extends Component{
       [type]: value
     })
   }
+
+  componentDidMount() {
+    const form = document.getElementsByTagName('form')[0];
+    // this.resetForm(form);
+    // form.reset()
+    // if(form){ console.log(`form exists`); form.reset() }
+    // else {console.log(`doesnt exist`)}
+  //  console.log(form.getAttribute("email"))
+
+  }
+
 
   render() {
     const { email, password } = this.state;
@@ -30,7 +42,7 @@ export default class Login extends Component{
         </div>
         <div className="item11"></div>
         <div className="item2 medium-font">
-          Please login below.
+          {this.props.userAlert}
         </div>
         <div className="item3 label-font">* Email</div>
         <div className="item4"><input className="item4" type="email" name="email" placeholder="e.g. joe@smith.com" onChange={(e) => this.inputHandler(e)} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input></div>

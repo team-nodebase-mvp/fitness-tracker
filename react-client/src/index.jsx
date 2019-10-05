@@ -30,6 +30,7 @@ class App extends React.Component {
     const { value } = e.target;
     this.setState({
       page: value,
+      userAlert: value === 'login' ? 'Please login below.' : 'Please register below.'
     })
   }
 
@@ -38,7 +39,7 @@ class App extends React.Component {
     e.preventDefault();
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
-    const form = document.getElementById('loginForm');
+    const form = document.getElementsByTagName('form')[0];
     //check database to authenticate username and password
     const userObj = {
       email: email,
@@ -53,23 +54,19 @@ class App extends React.Component {
             userAlert: `Welcome ${email}!`
           }, () => console.log(`post success`, data.data))
         }else {
+          form.reset();
           this.setState({
             page: 'login',
             userAlert: `Login credentials were incorrect!`
-          }, () => form.reset())
+          })
         }
       })
       .catch((err) => {
         this.setState({
           page: 'login',
           userAlert: `Login credentials were incorrect!`
-        }, () => form.reset())
+        })//() => form.reset())
       })
-    //if authenticated, change state for page to 'userprofile'
-    // this.setState({
-    //   page: 'userprofile',
-    //   email: email
-    // })
   }
 
   logoutHandler(e) {
@@ -83,6 +80,7 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       page: 'homepage',
+      userAlert: 'Please login to continue.'
     })
   }
 
@@ -90,7 +88,7 @@ class App extends React.Component {
     e.preventDefault();
     const email = e.target.getAttribute('email');
     const password = e.target.getAttribute('password');
-    const form = document.getElementById('registerForm');
+    // const type = document.getElementsByClassName('grid-container').length > 0 ? 'register' : 'login';
 
     const userObj = {
       email: email,
@@ -122,7 +120,7 @@ class App extends React.Component {
       case 'userprofile':
         return (<div><UserProfile userAlert={this.state.userAlert} email={this.state.email}logoutHandler={this.logoutHandler}/></div>);
       case 'login':
-        return (<div><Login loginHandler={this.loginHandler} email={this.state.email} backHomeHandler={this.backHomeHandler}/></div>);
+        return (<div><Login userAlert={this.state.userAlert} loginHandler={this.loginHandler} email={this.state.email} backHomeHandler={this.backHomeHandler}/></div>);
       case 'register':
         return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert} email={this.state.email} backHomeHandler={this.backHomeHandler}/></div>);
     }

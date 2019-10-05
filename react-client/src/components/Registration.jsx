@@ -31,7 +31,6 @@ export default class Registration extends Component{
             </div>
             <div className="item11"></div>
             <div className="item2 medium-font">
-              Please register below.
               <div>{this.props.userAlert}</div>  
             </div>    
             <div className="item3 label-font">* Email</div>
