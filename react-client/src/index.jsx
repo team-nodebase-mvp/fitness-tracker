@@ -105,6 +105,7 @@ class App extends React.Component {
         }, () => console.log(`post success`, data.data))
       })
       .catch((err) => {
+        document.getElementsByTagName('form')[0].reset();
         this.setState({
           page: 'register',
           userAlert: `User ${email} already exists!`,      
