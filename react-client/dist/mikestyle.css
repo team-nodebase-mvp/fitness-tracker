@@ -120,15 +120,16 @@ table .butn, .logout {
   margin-bottom: 20px;
 }
 
-.table-container {
+/* .table-container {
   overflow-x: auto;
   overflow-y: scroll;
-}
+} */
 
 table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   text-align: center;
+  border: 1px solid #ffffff;
 }
 
 th {
@@ -155,17 +156,18 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 	
-	tr { border-bottom: 1px solid #ccc; }
+	/* tr { border-bottom: 1px solid #ccc; } */
 	
 	td { 
 		/* Behave  like a "row" */
     /* border: 1px solid red; */
     border: none;
-    width: 55%;
+    width: 50%;
     border-bottom: 1px solid #ccc; 
     min-height: 20px;
 		position: relative;
-		padding-left: 50%; 
+    padding-left: 50%; 
+    padding-bottom: 7px;
 	}
 	
 	td:before { 
@@ -192,7 +194,7 @@ only screen and (max-width: 760px),
 	td:nth-of-type(7):before { content: "Time"; }
 	td:nth-of-type(8):before { content: "Distance"; }
 	td:nth-of-type(9):before { content: "Speed"; }
-  td:nth-of-type(11):before { content: "Incline"; }
-  td:nth-of-type(12):before { content: "Reistance"; }
-  td:nth-of-type(13):before { content: "Laps"; }
+  td:nth-of-type(10):before { content: "Incline"; }
+  td:nth-of-type(11):before { content: "Reistance"; }
+  td:nth-of-type(12):before { content: "Laps"; }
 }
