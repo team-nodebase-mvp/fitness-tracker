@@ -170,9 +170,10 @@ button {
   height: 35px;
   padding: 0px;
   }
-.item9 { grid-area: button; width: 100%}
+.item9 { grid-area: button; width: 100%; margin: 0 0 10px 0}
 .item10 { grid-area: spacer2; width: 100%}
-.item11 { grid-area: row_spacer: width:100%}
+.item11 { grid-area: row_spacer; width:100%}
+.item12 { grid-area: button2; width:100%}
 @media only screen and (max-width: 600px) {
   .grid-container {
     display: grid;
@@ -187,6 +188,7 @@ button {
       'spacer confirm_label confirm_label confirm_label confirm_label confirm_label spacer2'
       'spacer confirm_input confirm_input confirm_input confirm_input confirm_input spacer2'
       'spacer button button button button button spacer2'
+      'spacer button2 button2 button2 button2 button2 spacer2'
       ;
   }
   .grid-container-login {
@@ -200,6 +202,7 @@ button {
       'spacer password_label password_label password_label password_label password_label spacer2'
       'spacer password_input password_input password_input password_input password_input spacer2'
       'spacer button button button button button spacer2'
+      'spacer button2 button2 button2 button2 button2 spacer2'
       ;
   }
 }
@@ -218,6 +221,7 @@ button {
     'spacer spacer spacer confirm_label spacer2 spacer2 spacer2'
     'spacer spacer spacer confirm_input spacer2 spacer2 spacer2'
     'spacer spacer spacer button spacer2 spacer2 spacer2'
+    'spacer spacer spacer button2 spacer2 spacer2 spacer2'
     ;
 
 }
@@ -233,6 +237,7 @@ button {
     'spacer spacer spacer password_label spacer2 spacer2 spacer2'
     'spacer spacer spacer password_input spacer2 spacer2 spacer2'
     'spacer spacer spacer button spacer2 spacer2 spacer2'
+    'spacer spacer spacer button2 spacer2 spacer2 spacer2'
     ;
 
 }
