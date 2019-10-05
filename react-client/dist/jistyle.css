@@ -175,11 +175,11 @@ button {
 .item8 { 
   grid-area: confirm_input; 
   width: 99.5%;
-  margin: 0px 0px 15px 0px;
+  margin: 0px 0px 10px 0px;
   height: 35px;
   padding: 0px;
   }
-.item9 { grid-area: button; width: 100%; margin: 0 0 10px 0}
+.item9 { grid-area: button; width: 100%; margin: 0 0 5px 0}
 .item10 { grid-area: spacer2; width: 100%}
 .item11 { grid-area: row_spacer; width:100%}
 .item12 { grid-area: button2; width:100%}
@@ -215,12 +215,7 @@ button {
       ;
     margin: 0 auto;
     width: 300px;
-    /* top: 20px */
-    /* padding: 30px 0 0 0 */
   }
-  /* form {
-    padding: 100px 0 0 0;
-  } */
 }
 
 
@@ -267,7 +262,7 @@ button {
 }
 form {
   padding: 100px 0 0 0;
-  background-color: #cddad5
+  background: #cddad5
 }
 
 .grid-container-login{
