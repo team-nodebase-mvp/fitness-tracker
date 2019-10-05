@@ -31,15 +31,15 @@ export default class Registration extends Component{
             </div>
             <div className="item11"></div>
             <div className="item2 medium-font">
-              Please register below
+              Please register below.
             </div>        
-            <div className="item3 label-font">Email</div>
+            <div className="item3 label-font">* Email</div>
             <div className="item4"><input className="item4" type="email" name="email" onChange={(e) => this.inputHandler(e)} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input>
             </div>
-            <div className="item5 label-font">Password</div><br/>
+            <div className="item5 label-font">* Password</div><br/>
             <div className="item6"><input className="item6" type="password" name="password" onChange={(e) => this.inputHandler(e)} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></input>
             </div>
-            <div className="item7 label-font">Confirm Password</div><br/>
+            <div className="item7 label-font">* Confirm Password</div><br/>
             <div className="item8"><input className="item8" type="password" name="password_two" onChange={(e) => this.inputHandler(e)} pattern={this.state.password} title="Must match first password field" required></input>        
             </div>
             <div className="item9">
