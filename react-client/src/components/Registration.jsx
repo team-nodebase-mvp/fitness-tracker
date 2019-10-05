@@ -32,7 +32,8 @@ export default class Registration extends Component{
             <div className="item11"></div>
             <div className="item2 medium-font">
               Please register below.
-            </div>        
+              <div>{this.props.userAlert}</div>  
+            </div>    
             <div className="item3 label-font">* Email</div>
             <div className="item4"><input className="item4" type="email" name="email" placeholder="e.g. joe@smith.com" onChange={(e) => this.inputHandler(e)} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input>
             </div>
@@ -45,7 +46,6 @@ export default class Registration extends Component{
             <div className="item9">
               <button className="butn-corner is-primary item9" value="register" type="submit">Register</button>
             </div>
-            {/* <div>{this.props.userAlert}</div> */}
             <div className="item12">
               <button className="butn-corner is-primary item12" value="homepage" onClick={(e) => this.props.backHomeHandler(e)}>Cancel</button>
             </div>

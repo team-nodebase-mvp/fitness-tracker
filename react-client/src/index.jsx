@@ -109,8 +109,8 @@ class App extends React.Component {
       .catch((err) => {
         this.setState({
           page: 'register',
-          userAlert: `User ${email} already exists!`
-        }, () => form.reset())
+          userAlert: `User ${email} already exists!`,      
+        });
       })
   }
 
@@ -126,10 +126,6 @@ class App extends React.Component {
       case 'register':
         return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert} email={this.state.email} backHomeHandler={this.backHomeHandler}/></div>);
     }
-    // return (
-    // <div>
-    //   <UserProfile />
-    // </div>)
   }
 }
 
