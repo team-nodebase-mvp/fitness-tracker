@@ -27,7 +27,7 @@ class ListItem extends React.Component {
 
     let custom, sets, reps, weight, time, distance, speed, incline, resistance, laps;
 
-    if (exercise.custom === null) {
+    if (exercise.custom === "") {
       custom = <td style={rowCollapse}>{exercise.custom}</td>;
     } else {
       custom = <td>{exercise.custom}</td>;
