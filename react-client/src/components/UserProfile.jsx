@@ -51,11 +51,9 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile">
         <div>
-          <span><button className="butn" className="logout" onClick={(e) => this.props.logoutHandler(e)}>Logout</button></span>
-          <span>{this.props.userAlert}</span>
-          
+          <button className="butn" className="logout" onClick={(e) => this.props.logoutHandler(e)}>Logout</button>
+          <div className="welcome">{this.props.userAlert}</div>  
         </div>
-        
         <div>
           <Form email={this.props.email} getExercises={this.getExercises}/>
         </div>
