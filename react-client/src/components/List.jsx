@@ -2,18 +2,17 @@ import React from 'react';
 import ListItem from './ListItem.jsx';
 
 // let message;
-// if ((JSON.parse(props.userHistory)).length === 1) {
-// message = `You've done ${ (JSON.parse(userHistory)).length } exercise in the last 30 days.`
-// }
-// message = `You've done ${ (JSON.parse(userHistory)).length } exercises in the last 30 days.`
+
 
 const List = ( { userHistory, addExercise, deleteExercise } ) => (
 
   <div className="list">
     <h3> Your Exercises </h3>
     
-    <h5>You've done { (JSON.parse(userHistory)).length } exercises in the last 30 days.</h5>
-    {/* {message} */}
+    <h5>
+      {(JSON.parse(userHistory)).length === 1 ? `You've done ${ (JSON.parse(userHistory)).length } exercise in the last 30 days.` : `You've done ${ (JSON.parse(userHistory)).length } exercises in the last 30 days.`}
+    </h5>
+
     <div className="table-container">
         <table className="table-header" border="1">
           <thead>
