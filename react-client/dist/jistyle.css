@@ -145,9 +145,9 @@ button {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: 2px 2px 0px #666666;
+  /* -webkit-box-shadow: 2px 2px 0px #666666;
   -moz-box-shadow: 2px 2px 0px #666666;
-  box-shadow: 2px 2px 0px #666666;
+  box-shadow: 2px 2px 0px #666666; */
 }
 .item2 { 
   grid-area: alert; 
@@ -264,9 +264,9 @@ button {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4ce7cd', endColorstr='#33807a', GradientType=0 );
   margin: 0 auto;
   width: 300px;
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
+  -webkit-border-radius: 20px 20px 10pc 10px;
+  -moz-border-radius: 20px 20px 10px 10px;
+  border-radius: 20px 20px 10px 10px;
   -webkit-box-shadow: 2px 2px 6px #666666;
   -moz-box-shadow: 2px 2px 6px #666666;
   box-shadow: 2px 2px 6px #666666;
