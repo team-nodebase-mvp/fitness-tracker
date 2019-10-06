@@ -17,7 +17,7 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Product Description ##
-  > App to track your fitness progress and personal bests in weight-lifting, running, walking, cycling, and swimming. 
+  > App to track your fitness progress in weight-lifting, running, walking, cycling, and swimming. 
 
 ## Demographic ##
   > People who would like to track their fitness progress would be interested in this app.
