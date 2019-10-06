@@ -44,6 +44,7 @@ body {
 .form img {
   width: 50px;
   height: auto;
+  padding-bottom: 20px;
 }
 
 .add-exercise-button {
