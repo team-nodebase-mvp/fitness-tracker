@@ -103,9 +103,12 @@ class Form extends React.Component {
   render() {
     let { exerciseCategory, custom, sets, reps, weight, time, distance, speed, incline, resistance, laps, weightSelect, distanceSelect, timeSelect, speedSelect } = this.state;
     let metrics;
+    let icon;
     if (exerciseCategory === '') {
+      icon = '';
       metrics = '';
     } else if (exerciseCategory === 'weightLifting') {
+      icon = <img src="dumbbell-solid.svg" />;
       metrics=
       <form className="form">
         <div>
@@ -134,6 +137,7 @@ class Form extends React.Component {
         </div>
       </form>;
     } else if (exerciseCategory === 'runningWalking') {
+      icon = <img src="running-solid.svg"/>;
       metrics=
       <form className="form">
         <div>
@@ -186,6 +190,7 @@ class Form extends React.Component {
         </div>
       </form>;
     } else if (exerciseCategory === 'cycling') {
+      icon = <img src="biking-solid.svg"/>;
       metrics=
       <form className="form">
         <div>
@@ -232,6 +237,7 @@ class Form extends React.Component {
         </div>
       </form>;
     } else {
+      icon = <img src="swimmer-solid.svg"/>;
       metrics=
       <form className="form">
         <div>
@@ -282,6 +288,9 @@ class Form extends React.Component {
     return (
       <div className="form">
         <h3>Add an Exercise!</h3>
+        <div>
+          {icon}
+        </div>
         <div className="dropdown">
           <select className="exercise-select" name="exerciseSelect" onChange={this.handleCategoryChange}>
             <option value="">--Please choose an exercise--</option>

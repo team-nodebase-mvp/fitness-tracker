@@ -40,6 +40,11 @@ body {
   }
 } */
 
+.form img {
+  width: 50px;
+  height: auto;
+}
+
 .add-exercise-button {
   padding-bottom: 40px;
 }
