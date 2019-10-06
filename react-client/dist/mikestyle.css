@@ -26,6 +26,7 @@ body {
   margin-top: 10px;
   border-radius: 20px 20px 10px 10px;
   width: 100%;
+  color: #ffffff;
 }
 
 @media only screen and (min-width: 450px) {
@@ -54,22 +55,22 @@ body {
 }
 
 .form h3 {
-  margin-top: 0px;
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  color: #212525;
-  text-align: center;
+  padding-top: 20px;
+  /* width: 100%;
+  height: 60px; */
+  /* background-color: white; */
+  font-weight: 200;
+  color: #ffffff;
+  /* text-align: center;
   font-size: 28px;
-  font-weight: 150;
   text-shadow: 0px 16px 18px rgba(150, 150, 150, 1);
   vertical-align: baseline;
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: 2px 2px 0px #666666;
+  border-radius: 10px 10px 0 0; */
+  /* -webkit-box-shadow: 2px 2px 0px #666666;
   -moz-box-shadow: 2px 2px 0px #666666;
-  box-shadow: 2px 2px 0px #666666;
+  box-shadow: 2px 2px 0px #666666; */
 }
 
 h3 {
@@ -145,7 +146,7 @@ table .butn, .logout {
   font-size: 13px;
   height: 28px;
   width: 220px;
-  margin: 20px 0 20px 0;
+  margin-bottom: 20px;
   padding-left: 20px;
 }
 
