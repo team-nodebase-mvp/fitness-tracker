@@ -76,10 +76,14 @@ body {
 
 h3 {
   font-size: 24px;
+  font-weight: 200;
+  text-align: center;
 }
 
 h5 {
   font-size: 14px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .welcome {
