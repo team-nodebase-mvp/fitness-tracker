@@ -1,13 +1,6 @@
 # fitness-tracker
 
-> Functional front-end remodel of LuluLemon Review Section
-
-## Related Projects
-
-  - https://github.com/team-nachos-fec/lalalime-navbar
-  - https://github.com/team-nachos-fec/lalalime-main-product
-  - https://github.com/team-nachos-fec/lalalime-similar-products
-  
+> A responsive, mobile-first app that allows users to keep track of their fitness progress in various exercise categories
 
 ## Table of Contents
 
@@ -19,9 +12,7 @@
 
 To run the server, run ``` npm start ``` in a terminal window
 
-To seed the database, run ``` npm run seed ``` in another terminal window
-
-To view the review section in a browser, enter http://localhost:3004/ in the address bar
+To view the app in a browser, enter http://localhost:3000/ in the address bar
 
 ## Requirements
 
@@ -41,14 +32,13 @@ npm install
 ```
 ## Demos
 
-![Alt text](https://i.imgur.com/WgTCMoU.gif)
-![Alt text](https://i.imgur.com/fsQ7LVf.gif)
-![Alt text](https://i.imgur.com/3Wnatsp.gif)
+![Alt text](https://i.imgur.com/RSCtray.gif)
+![Alt text](https://i.imgur.com/6Cz6sLI.gif)
+![Alt text](https://i.imgur.com/OVSaUns.gif)
 
 ## Screenshots
 
-![Alt text](https://i.imgur.com/8BAu5rM.png)
-![Alt text](https://i.imgur.com/GhqHsPT.png)
-![Alt text](https://i.imgur.com/tsQ2wF2.png)
-![Alt text](https://i.imgur.com/e7174N7.png)
-![Alt text](https://i.imgur.com/gGBEeDu.png)
+![Alt text](https://i.imgur.com/7oMVHlX.png)
+![Alt text](https://i.imgur.com/i9vIRb9.png)
+![Alt text](https://i.imgur.com/uPRKDQI.png)
+![Alt text](https://i.imgur.com/Lpshtms.png)
